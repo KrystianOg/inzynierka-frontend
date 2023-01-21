@@ -1,0 +1,55 @@
+
+.home-slide-in-container {
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    clip-path: polygon(
+        50% 0%, 100% 50%, 100% 100%, 0 100%, 0 50%
+    );
+    background-color: darkorange;
+}
+
+@media screen and (min-width: 600px) {
+    .home-slide-in-container {
+        visibility: hidden;
+    }
+    
+}
+
+.pentagon-front {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: -14px;
+    background-color: darkorange;
+    clip-path: polygon(
+        50% 0%, 100% 50%, 100% 100%, 0 100%, 0 50%
+    )
+}
+
+.pentagon-middle {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: -7px;
+    background-color: white;
+    clip-path: polygon(
+        50% 0%, 100% 50%, 100% 100%, 0 100%, 0 50%
+    )
+}
+
+/* 
+.pentagon-back {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background-color: darkorange;
+    clip-path: polygon(
+        50% 0%, 100% 50%, 100% 100%, 0 100%, 0 50%
+    )
+} */

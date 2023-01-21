@@ -1,0 +1,76 @@
+{
+    "info": {
+        "meal_planner": "DietGenius: Meal Planner",
+        "nutrition_coach": "DietGenius: Nutrition Coach"
+    },
+    "navigation": {
+        "plan": "plan",
+        "calendar": "calendar",
+        "recipes": "recipes",
+        "profile": "profile",
+        "signout": "sign out",
+        "signin": "sign in",
+        "signup": "sign up",
+        "close": "close"
+    },
+    "signin": {
+        "title": "sign in",
+        "email_address": "email address",
+        "password": "password",
+        "or": "or",
+        "with_google": "sign in with google",
+        "forgot_password": "forgot password?",
+        "no_account": "don't have an account? sign up"
+    },
+    "setup_information": {
+
+    },
+    "profile": {
+        "email": {
+            "copied": "email copied to clipboard",
+            "copy_fail": "email copying failed"
+        },
+        "your_info": {
+            "title": "your info",
+            "height": "height",
+            "weight": "weight",
+            "age": "age",
+            "daily_meal_count":  "Daily meal count",
+            "water_consumption": "Water consumption",
+            "time_to_prepare": "Max time to prepare a meal"
+        },
+        "min_max": {
+            "title": "Min - Max",
+            "min_calories": "Min calories",
+            "max_calories": "Max calories",
+            "min_protein": "Min protein",
+            "max_protein": "Max protein",
+            "min_carbs": "Min carbs",
+            "max_carbs": "Max carbs"
+        },
+        "spoonacular": {
+            "title": "Spoonacular",
+            "username":  "Spoonacular username",
+            "password": "Spoonacular password"
+        },
+        "preferences": {
+            "title": "Preferences",
+            "dark_mode": "Prefer dark mode"
+        },
+        "notifications": {
+            "title": "Notifications",
+            "monthly_summary": "Monthly summary",
+            "weekly_summary": "Weekly summary",
+            "daily_reminder": "Daily reminder"
+        }
+    },
+    "error": {
+        "an_error_occurred": "An error occurred",
+        "something_went_wrong": "Something went wrong",
+        "not_found": "Page not found",
+        "go_back": "Go back"
+    },
+    "success": {
+        
+    }
+}

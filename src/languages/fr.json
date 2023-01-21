@@ -1,0 +1,57 @@
+{
+    "sign-in": {
+    "title": "se connecter",
+    "email": "adresse e-mail",
+    "password": "mot de passe",
+    "remember-me": "se souvenir de moi",
+    "or": "ou",
+    "sign-in-with-google": "se connecter avec Google",
+    "forgot-password": "mot de passe oublié?",
+    "dont-have-an-account": "vous n'avez pas de compte? s'inscrire"
+    },
+    "sign-up": {
+    "title": "s'inscrire",
+    "repeat-password": "répéter le mot de passe",
+    "already-a-member": "déjà membre? se connecter"
+    },
+    "planner": {
+    "title": "planificateur",
+    "navigation": {
+    "next": "suivant",
+    "previous": "précédent",
+    "finish": "terminer"
+    },
+    "meals": {
+    "breakfast": "petit-déjeuner",
+    "lunch": "déjeuner",
+    "dinner": "dîner"
+    },
+    "weekdays": {
+    "monday": "lundi",
+    "tuesday": "mardi",
+    "wednesday": "mercredi",
+    "thursday": "jeudi",
+    "friday": "vendredi",
+    "saturday": "samedi",
+    "sunday": "dimanche"
+    },
+    "generate": {
+    "title": "générer",
+    "description": "générer un nouveau plan de repas",
+    "button": "générer"
+    }
+    },
+    "calendar": {
+    },
+    "profile": {
+        "is-verified": "vérifié",
+        "email": "e-mail",
+        "first-name": "prénom",
+        "last-name": "nom de famille",
+        "gender": "genre",
+        "weight": "poids",
+        "age": "âge",
+        "height": "taille",
+        "prefers-dark-mode": "mode sombre"
+    }
+}

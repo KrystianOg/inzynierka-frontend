@@ -1,0 +1,242 @@
+{
+    "week": {
+        "monday": {
+            "meals": [
+                {
+                    "id": 1440995,
+                    "imageType": "jpg",
+                    "title": "Peanut Butter Banana Muffins",
+                    "readyInMinutes": 35,
+                    "servings": 12,
+                    "sourceUrl": "https://cookienameddesire.com/peanut-butter-banana-muffins/"
+                },
+                {
+                    "id": 557461,
+                    "imageType": "jpg",
+                    "title": "Lighter Mini Citrus CheeseCake Bites",
+                    "readyInMinutes": 30,
+                    "servings": 1,
+                    "sourceUrl": "http://www.sugarfreemom.com/recipes/lighter-mini-citrus-cheesecake-bites/"
+                },
+                {
+                    "id": 133466,
+                    "imageType": "png",
+                    "title": "Fried Sauerkraut Cakes with Kielbasa",
+                    "readyInMinutes": 30,
+                    "servings": 4,
+                    "sourceUrl": "http://www.epicurious.com/recipes/food/views/Fried-Sauerkraut-Cakes-with-Kielbasa-231486"
+                }
+            ],
+            "nutrients": {
+                "calories": 2687.51,
+                "protein": 57.33,
+                "fat": 190.87,
+                "carbohydrates": 191.54
+            }
+        },
+        "tuesday": {
+            "meals": [
+                {
+                    "id": 636026,
+                    "imageType": "jpg",
+                    "title": "Breakfast Biscuits and Gravy",
+                    "readyInMinutes": 45,
+                    "servings": 4,
+                    "sourceUrl": "https://spoonacular.com/breakfast-biscuits-and-gravy-636026"
+                },
+                {
+                    "id": 381708,
+                    "imageType": "jpg",
+                    "title": "Texas-Style Steak Sandwiches",
+                    "readyInMinutes": 20,
+                    "servings": 2,
+                    "sourceUrl": "http://www.tasteofhome.com/Recipes/texas-style-steak-sandwiches"
+                },
+                {
+                    "id": 174401,
+                    "imageType": "jpg",
+                    "title": "Cheesy Chicken Quesadillas",
+                    "readyInMinutes": 30,
+                    "servings": 4,
+                    "sourceUrl": "http://www.BettyCrocker.com/recipes/cheesy-chicken-quesadillas/dab064e2-5275-4f6e-8063-d03b11296485"
+                }
+            ],
+            "nutrients": {
+                "calories": 2702.06,
+                "protein": 127.1,
+                "fat": 179.72,
+                "carbohydrates": 145.79
+            }
+        },
+        "wednesday": {
+            "meals": [
+                {
+                    "id": 68989,
+                    "imageType": "jpg",
+                    "title": "Bacon 'n' Egg Breakfast Empanadas",
+                    "readyInMinutes": 45,
+                    "servings": 4,
+                    "sourceUrl": "http://www.myrecipes.com/recipe/bacon-n-egg-breakfast-empanadas-10000000353924/"
+                },
+                {
+                    "id": 1697535,
+                    "imageType": "jpg",
+                    "title": "Panera Spicy Thai Salad",
+                    "readyInMinutes": 20,
+                    "servings": 4,
+                    "sourceUrl": "https://spoonacular.com/panera-spicy-thai-salad-1697535"
+                },
+                {
+                    "id": 327196,
+                    "imageType": "jpeg",
+                    "title": "Grown-Up Farmhouse Grilled Cheese",
+                    "readyInMinutes": 45,
+                    "servings": 4,
+                    "sourceUrl": "http://www.foodnetwork.com/recipes/claire-robinson/grown-up-farmhouse-grilled-cheese-recipe.html"
+                }
+            ],
+            "nutrients": {
+                "calories": 2722.8,
+                "protein": 151.52,
+                "fat": 178.74,
+                "carbohydrates": 135.18
+            }
+        },
+        "thursday": {
+            "meals": [
+                {
+                    "id": 631730,
+                    "imageType": "jpg",
+                    "title": "Paleo double chocolate breakfast cookies",
+                    "readyInMinutes": 45,
+                    "servings": 10,
+                    "sourceUrl": "http://www.sheknows.com/food-and-recipes/articles/1041561/paleo-double-chocolate-breakfast-cookies"
+                },
+                {
+                    "id": 557461,
+                    "imageType": "jpg",
+                    "title": "Lighter Mini Citrus CheeseCake Bites",
+                    "readyInMinutes": 30,
+                    "servings": 1,
+                    "sourceUrl": "http://www.sugarfreemom.com/recipes/lighter-mini-citrus-cheesecake-bites/"
+                },
+                {
+                    "id": 803001,
+                    "imageType": "jpg",
+                    "title": "Keto Chocolate Smoothie",
+                    "readyInMinutes": 45,
+                    "servings": 2,
+                    "sourceUrl": "http://elanaspantry.com/keto-chocolate-smoothie/"
+                }
+            ],
+            "nutrients": {
+                "calories": 2676.9,
+                "protein": 48.68,
+                "fat": 209.51,
+                "carbohydrates": 162.55
+            }
+        },
+        "friday": {
+            "meals": [
+                {
+                    "id": 970837,
+                    "imageType": "jpg",
+                    "title": "Breakfast Banh Mi Sandwich with Eggs and Sausage",
+                    "readyInMinutes": 35,
+                    "servings": 4,
+                    "sourceUrl": "https://www.epicurious.com/recipes/food/views/breakfast-banh-mi-sandwich-with-eggs-and-sausage-51252290"
+                },
+                {
+                    "id": 690778,
+                    "imageType": "jpg",
+                    "title": "Chipotle Ranch Bacon Cheddar Nachos",
+                    "readyInMinutes": 15,
+                    "servings": 4,
+                    "sourceUrl": "http://www.reneeskitchenadventures.com/2015/11/chipotle-ranch-bacon-cheddar-nachos.html"
+                },
+                {
+                    "id": 153783,
+                    "imageType": "jpg",
+                    "title": "Margarita Pizza",
+                    "readyInMinutes": 45,
+                    "servings": 2,
+                    "sourceUrl": "http://www.epicurious.com/recipes/food/views/Margarita-Pizza-51112270"
+                }
+            ],
+            "nutrients": {
+                "calories": 2713.45,
+                "protein": 129.24,
+                "fat": 167.38,
+                "carbohydrates": 177.03
+            }
+        },
+        "saturday": {
+            "meals": [
+                {
+                    "id": 393410,
+                    "imageType": "jpeg",
+                    "title": "The Ultimate Breakfast for Dinner: Sausage and Spinach Egg Strata",
+                    "readyInMinutes": 135,
+                    "servings": 6,
+                    "sourceUrl": "http://www.foodnetwork.com/recipes/rachael-ray/the-ultimate-breakfast-for-dinner-sausage-and-spinach-egg-strata-recipe.html"
+                },
+                {
+                    "id": 564891,
+                    "imageType": "jpg",
+                    "title": "Ravioli Pesto",
+                    "readyInMinutes": 22,
+                    "servings": 2,
+                    "sourceUrl": "http://www.noobcook.com/ravioli-pesto/2/"
+                },
+                {
+                    "id": 1186339,
+                    "imageType": "jpg",
+                    "title": "Spicy Peanut Noodles",
+                    "readyInMinutes": 10,
+                    "servings": 4,
+                    "sourceUrl": "https://www.jocooks.com/recipes/spicy-peanut-and-chicken-soba-noodles/"
+                }
+            ],
+            "nutrients": {
+                "calories": 2707.56,
+                "protein": 130.32,
+                "fat": 127.72,
+                "carbohydrates": 265.62
+            }
+        },
+        "sunday": {
+            "meals": [
+                {
+                    "id": 287920,
+                    "imageType": "jpeg",
+                    "title": "Breakfast Casserole",
+                    "readyInMinutes": 40,
+                    "servings": 8,
+                    "sourceUrl": "http://www.foodnetwork.com/recipes/breakfast-casserole-recipe.html"
+                },
+                {
+                    "id": 389867,
+                    "imageType": "jpg",
+                    "title": "Crunchy Ham and Cheese",
+                    "readyInMinutes": 25,
+                    "servings": 2,
+                    "sourceUrl": "http://www.tasteofhome.com/Recipes/crunchy-ham-and-cheese"
+                },
+                {
+                    "id": 157623,
+                    "imageType": "jpg",
+                    "title": "Hasselback Potato Gratin",
+                    "readyInMinutes": 105,
+                    "servings": 4,
+                    "sourceUrl": "http://www.seriouseats.com/recipes/2013/12/hasselback-potato-gratin-casserole-holiday-food-lab.html"
+                }
+            ],
+            "nutrients": {
+                "calories": 2701.98,
+                "protein": 86.11,
+                "fat": 167.01,
+                "carbohydrates": 224.08
+            }
+        }
+    }
+}

@@ -1,0 +1,82 @@
+{
+    "sign-in": {
+        "title": "sign in",
+        "email": "email address",
+        "password": "password",
+        "remember-me": "remember me",
+        "or": "or",
+        "sign-in-with-google": "sign in with google",
+        "forgot-password": "forgot password?",
+        "dont-have-an-account": "don't have an account? sign up"
+    },
+    "sign-up": {
+        "title": "sign up",
+        "repeat-password": "repeat password",
+        "already-a-member": "already a member? sign in"
+    },
+    "planner": {
+        "title": "planner",
+        "navigation": {
+            "next": "next",
+            "previous": "previous",
+            "finish": "finish"
+        },
+        "meals": {
+            "breakfast": "breakfast",
+            "lunch": "lunch",
+            "dinner": "dinner"
+        },
+        "weekdays": {
+            "monday": "monday",
+            "tuesday": "tuesday",
+            "wednesday": "wednesday",
+            "thursday": "thursday",
+            "friday": "friday",
+            "saturday": "saturday",
+            "sunday": "sunday"
+        },
+        "generate": {
+            "title": "generate",
+            "description": "generate a new meal plan",
+            "button": "generate"
+        }
+    },
+    "calendar": {
+
+    },
+    "profile": {
+        "is-verified": "verified",
+        "email": "email",
+        "first-name": "first name",
+        "last-name": "last name",
+        "gender": "gender",
+        "weight": "weight",
+        "age": "age",
+        "height": "height",
+        "prefers-dark-mode": "dark mode"
+    },
+    "post-sign-up": {
+        "daily-meal-count": "daily meal count",
+        "workout": ""
+    },
+    "errors": {
+        "go-back": "go back",
+        "missing-data": "missing data",
+        "some-error": "an error occurred!",
+        "not-found": "not found",
+        "not-authorized": "not authorized",
+        "not-verified": "not verified"
+    },
+    "verify": {
+        "success": "successfully verified"
+    },
+    "questions": {
+        "q1": "Select your gender",
+        "q2": "Please tell us about your body measurements",
+        "q3": "What is your desired weight?",
+        "q4": "How often do you workout?",
+        "q5": "How many meals do you usually eat?",
+        "q6": "How much time would you like to spend preparing a meal?",
+        "q7": "Now select your kitchen appliances"
+    }
+}

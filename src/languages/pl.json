@@ -1,0 +1,57 @@
+{
+    "sign-in": {
+    "title": "zaloguj się",
+    "email": "adres email",
+    "password": "hasło",
+    "remember-me": "zapamiętaj mnie",
+    "or": "lub",
+    "sign-in-with-google": "zaloguj się z google",
+    "forgot-password": "zapomniałeś hasła?",
+    "dont-have-an-account": "nie masz konta? zarejestruj się"
+    },
+    "sign-up": {
+    "title": "zarejestruj się",
+    "repeat-password": "powtórz hasło",
+    "already-a-member": "już jesteś członkiem? zaloguj się"
+    },
+    "planner": {
+    "title": "planner",
+    "navigation": {
+    "next": "następny",
+    "previous": "poprzedni",
+    "finish": "zakończ"
+    },
+    "meals": {
+    "breakfast": "śniadanie",
+    "lunch": "lunch",
+    "dinner": "kolacja"
+    },
+    "weekdays": {
+    "monday": "poniedziałek",
+    "tuesday": "wtorek",
+    "wednesday": "środa",
+    "thursday": "czwartek",
+    "friday": "piątek",
+    "saturday": "sobota",
+    "sunday": "niedziela"
+    },
+    "generate": {
+    "title": "wygeneruj",
+    "description": "wygeneruj nowy plan posiłków",
+    "button": "wygeneruj"
+    }
+    },
+    "calendar": {
+    },
+    "profile": {
+        "is-verified": "zweryfikowany",
+        "email": "email",
+        "first-name": "imię",
+        "last-name": "nazwisko",
+        "gender": "płeć",
+        "weight": "waga",
+        "age": "wiek",
+        "height": "wzrost",
+        "prefers-dark-mode": "tryb ciemny"
+    }
+}

@@ -1,0 +1,57 @@
+{
+    "sign-in": {
+    "title": "Anmelden",
+    "email": "E-Mail-Adresse",
+    "password": "Passwort",
+    "remember-me": "Angemeldet bleiben",
+    "or": "oder",
+    "sign-in-with-google": "Mit Google anmelden",
+    "forgot-password": "Passwort vergessen?",
+    "dont-have-an-account": "Sie haben noch kein Konto? Jetzt registrieren"
+    },
+    "sign-up": {
+    "title": "Registrieren",
+    "repeat-password": "Passwort wiederholen",
+    "already-a-member": "Bereits Mitglied? Hier anmelden"
+    },
+    "planner": {
+    "title": "Planer",
+    "navigation": {
+    "next": "Weiter",
+    "previous": "Zurück",
+    "finish": "Abschließen"
+    },
+    "meals": {
+    "breakfast": "Frühstück",
+    "lunch": "Mittagessen",
+    "dinner": "Abendessen"
+    },
+    "weekdays": {
+    "monday": "Montag",
+    "tuesday": "Dienstag",
+    "wednesday": "Mittwoch",
+    "thursday": "Donnerstag",
+    "friday": "Freitag",
+    "saturday": "Samstag",
+    "sunday": "Sonntag"
+    },
+    "generate": {
+    "title": "Erstellen",
+    "description": "Einen neuen Speiseplan erstellen",
+    "button": "Erstellen"
+    }
+    },
+    "calendar": {
+    },
+    "profile": {
+        "is-verified": "Verifiziert",
+        "email": "E-Mail",
+        "first-name": "Vorname",
+        "last-name": "Nachname",
+        "gender": "Geschlecht",
+        "weight": "Gewicht",
+        "age": "Alter",
+        "height": "Größe",
+        "prefers-dark-mode": "Dunkler Modus"
+    }
+}
