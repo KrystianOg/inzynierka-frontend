@@ -1,13 +1,13 @@
 import { Box, Typography, Container, Grid, Avatar, IconButton, CircularProgress, Link } from "@mui/material";
-import { Close } from "@mui/icons-material";
 import { Helmet } from "react-helmet-async";
-// import { skipToken } from "@reduxjs/toolkit/dist/query/react";
 import { TextField, Button } from "components/Rounded";
 import { SignUpCredentials } from "types/auth";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import { useLazySignUpQuery } from "app/supabase/auth";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const SignUp = () => {
 	const location = useLocation();
@@ -126,7 +126,7 @@ const SignUp = () => {
 					sx={{ margin: "3rem", padding: "10px" }}
 					onClick={() => navigate(from, { replace: true })}
 				>
-					<Close sx={{ width: "56px", height: "56px" }} />
+					<FontAwesomeIcon icon={faTimes} />
 				</IconButton>
 			</Box>
 		</Container>

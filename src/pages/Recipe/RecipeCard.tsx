@@ -1,22 +1,29 @@
 import { Card as MUICard, Checkbox, CardActions, CardContent, CardHeader, CardMedia, IconButton } from "@mui/material";
-import { Favorite, Share } from "@mui/icons-material";
 import { useGetProfileQuery, useUpdateProfileMutation } from "app/supabase/user";
 import useAuth from "hooks/useAuth";
 import { RecipeSearchItem } from "app/spoonacular/types";
 import { useSnackbar } from "notistack";
 
-interface RecipeCardProps {
-	recipe: RecipeSearchItem;
-}
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart, faShare } from "@fortawesome/free-solid-svg-icons";
+import { useTheme } from "@mui/material/styles";
 
-const RecipeCard = ({ recipe }: RecipeCardProps) => {
+const RecipeCard = ({ recipe }: { recipe: RecipeSearchItem }) => {
 	const { user } = useAuth();
 	const [updateProfile] = useUpdateProfileMutation();
 	const { data: profile } = useGetProfileQuery(user?.id!);
 	const { enqueueSnackbar } = useSnackbar();
+	const theme = useTheme();
 
 	const handleAddToFavorites = async () => {
-		await updateProfile({ id: user?.id!, recipes: [...(profile?.recipes ?? []), recipe.id] });
+		if (!profile?.recipes?.includes(recipe?.id)) {
+			await updateProfile({ id: user?.id!, recipes: [...(profile?.recipes ?? []), recipe.id] });
+		} else {
+			await updateProfile({
+				id: user?.id!,
+				recipes: profile?.recipes?.filter(r => r !== recipe?.id),
+			});
+		}
 	};
 
 	const handleShare = () => {
@@ -25,7 +32,16 @@ const RecipeCard = ({ recipe }: RecipeCardProps) => {
 	};
 
 	return (
-		<MUICard>
+		<MUICard
+			sx={{
+				transition: "all .2s ease-in-out",
+				"&:hover": {
+					transform: "scale(1.05)",
+					boxShadow: 3,
+					cursor: "pointer",
+				},
+			}}
+		>
 			<CardHeader title={recipe.title} />
 			<CardMedia component="img" height="194" image={recipe.image} alt="recipe image" />
 			<CardContent />
@@ -33,11 +49,28 @@ const RecipeCard = ({ recipe }: RecipeCardProps) => {
 				<Checkbox
 					aria-label="add to favorites"
 					onClick={handleAddToFavorites}
-					icon={<Favorite />}
-					checkedIcon={<Favorite color="primary" />}
+					icon={
+						<FontAwesomeIcon
+							icon={faHeart}
+							size="lg"
+							style={{
+								color: "darkgray",
+							}}
+						/>
+					}
+					checkedIcon={
+						<FontAwesomeIcon
+							icon={faHeart}
+							size="lg"
+							style={{
+								color: theme.palette.primary.main,
+							}}
+						/>
+					}
+					checked={profile?.recipes?.includes(recipe?.id)}
 				/>
 				<IconButton aria-label="share" onClick={handleShare}>
-					<Share />
+					<FontAwesomeIcon icon={faShare} />
 				</IconButton>
 			</CardActions>
 		</MUICard>

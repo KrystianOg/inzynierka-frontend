@@ -1,7 +1,6 @@
 import supabaseApi from './supabase'
 import supabase from 'utils/supabaseClient'
 import { UpdateProfile, Profile } from 'types/user';
-import { PostgrestError } from '@supabase/supabase-js';
 
 const userApi = supabaseApi.injectEndpoints({
     endpoints: (build) => ({

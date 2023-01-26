@@ -20,10 +20,14 @@ DietGenius: Nutrition Coach
 
 - [ ] Search all food (https://spoonacular.com/food-api/docs#Search-All-Food)
 
-- [ ] Search Custom Foods (https://spoonacular.com/food-api/docs#Search-Custom-Foods)
+- [x] Search Custom Foods (https://spoonacular.com/food-api/docs#Search-Custom-Foods)
 
-- [ ] Connect User (https://spoonacular.com/food-api/docs#Connect-User)
+- [x] Connect User (https://spoonacular.com/food-api/docs#Connect-User)
 
 - [ ] Generate Meal Plan (https://spoonacular.com/food-api/docs#Generate-Meal-Plan)
 
-
+Add expand to recipe card
+Add recipe table with some statistics
+Add search history
+Add search similar
+Add recipe page

@@ -1,6 +1,17 @@
 import { Routes, Route } from "react-router-dom";
 
-import { Home, SignIn, SignUp, NotFound, Profile, Recipes, Calendar, Planner, InformationSetup } from "pages";
+import {
+	Home,
+	SignIn,
+	SignUp,
+	NotFound,
+	Profile,
+	Recipes,
+	Plan,
+	InformationSetup,
+	Templates,
+	AddTemplate,
+} from "pages";
 import PrivateWrapper from "components/PrivateWrapper";
 
 export default () => {
@@ -8,16 +19,17 @@ export default () => {
 		<Routes>
 			{/* public routes */}
 			<Route path="/" element={<Home />} />
-			<Route path="/signin" element={<SignIn />} />
-			<Route path="/signup" element={<SignUp />} />
+			<Route path="signin" element={<SignIn />} />
+			<Route path="signup" element={<SignUp />} />
 			{/* <Route path="/restore-password" element={<RestorePassword />} /> */}
 			{/* private routes */}
 			<Route element={<PrivateWrapper />}>
-				<Route path="/setup-information" element={<InformationSetup />} />
-				<Route path="/profile" element={<Profile />} />
-				<Route path="/recipes" element={<Recipes />} />
-				<Route path="/calendar" element={<Calendar />} />
-				<Route path="/planner" element={<Planner />} />
+				<Route path="setup-information" element={<InformationSetup />} />
+				<Route path="profile" element={<Profile />} />
+				<Route path="recipes" element={<Recipes />} />
+				<Route path="plan" element={<Plan />} />
+				<Route path="templates" element={<Templates />} />
+				<Route path="templates/create" element={<AddTemplate />} />
 			</Route>
 
 			{/* 404 */}

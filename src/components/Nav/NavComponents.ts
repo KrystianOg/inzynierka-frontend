@@ -1,8 +1,15 @@
-import { styled, IconButton as MIconButton, Fab as MFab, Drawer as MDrawer, BottomNavigation, BottomNavigationAction } from "@mui/material";
-import { NavLink as RNavLink} from 'react-router-dom';
+import {
+	styled,
+	IconButton as MIconButton,
+	Fab as MFab,
+	Drawer as MDrawer,
+	BottomNavigation,
+	BottomNavigationAction,
+	Link
+} from "@mui/material";
 
-export const NavLink = styled(RNavLink)(({theme}) => ({
-    textAlign: "center",
+export const DrawerNavLink = styled(Link)(({ theme }) => ({
+	textAlign: "center",
 	fontSize: "2rem",
 	letterSpacing: "0.08rem",
 	fontWeight: "500",
@@ -10,26 +17,36 @@ export const NavLink = styled(RNavLink)(({theme}) => ({
 	color: theme.palette.primary.main,
 	height: "56px",
 	textTransform: "uppercase",
-	
+
 	"&:hover": {
 		color: theme.palette.secondary.dark,
 		transition: "color 0.3s ease-in-out",
 	},
 }))
 
-export const IconButton = styled(MIconButton)(({theme}) => ({
+export const NavLink = styled(Link)(({ theme }) => ({
+	textTransform: "capitalize",
+	textDecoration: "none",
+
+	"&:hover": {
+		color: theme.palette.secondary.dark,
+		transition: "color 0.3s ease-in-out",
+	},
+}))
+
+export const IconButton = styled(MIconButton)(({ theme }) => ({
 	color: theme.palette.primary.main,
 	marginTop: "3rem",
 	fontSize: "3rem",
-    margin: "16px auto",
+	margin: "16px auto",
 	"&:hover": {
 		color: theme.palette.secondary.dark,
 		transition: "color 0.3s ease-in-out",
 	},
 }))
 
-export const Fab = styled(MFab)(({theme}) => ({
-    backgroundColor: theme.palette.primary.main,
+export const Fab = styled(MFab)(({ theme }) => ({
+	backgroundColor: theme.palette.primary.main,
 	position: "fixed",
 	top: 16,
 	right: 16,
@@ -41,21 +58,21 @@ export const Fab = styled(MFab)(({theme}) => ({
 	},
 }))
 
-export const Fib = styled(MIconButton)(({theme}) => ({
-    position: "fixed",
-    top: 16,
-    right: 16,
-    zIndex: 2,
-    color: theme.palette.primary.main,
+export const Fib = styled(MIconButton)(({ theme }) => ({
+	position: "fixed",
+	top: 16,
+	right: 16,
+	zIndex: 2,
+	color: theme.palette.primary.main,
 }))
 
-export const Drawer = styled(MDrawer)(({theme}) => ({
-    "& .MuiDrawer-paper": {
-        boxSizing: "border-box",
-        width: "100vw",
-        boxShadow: "none",
-        backgroundImage: "none"
-    },
+export const Drawer = styled(MDrawer)(({ theme }) => ({
+	"& .MuiDrawer-paper": {
+		boxSizing: "border-box",
+		width: "100vw",
+		boxShadow: "none",
+		backgroundImage: "none"
+	},
 }))
 
 export const StickBottomNavigation = styled(BottomNavigation)`
@@ -71,6 +88,6 @@ export const StickBottomNavigation = styled(BottomNavigation)`
     }
 `
 
-export const StyledBottomNA = styled(BottomNavigationAction)(({theme}) => ({
-    color: theme.palette.primary.main,
+export const StyledBottomNA = styled(BottomNavigationAction)(({ theme }) => ({
+	color: theme.palette.primary.main,
 }))

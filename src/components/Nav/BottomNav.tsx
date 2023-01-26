@@ -1,21 +1,60 @@
 import { StickBottomNavigation, StyledBottomNA } from "./NavComponents";
-import { Event, MenuBook, Person, Egg } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCarrot, faUser, faBookOpen, faCalendar } from "@fortawesome/free-solid-svg-icons";
+import { useTheme } from "@mui/material/styles";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { useDarkMode } from "usehooks-ts";
 
-// const MCarrot = styled(Carrot)(({ theme }) => ({
-// 	fill: theme.palette.primary.main,
-// 	transform: "rotate(45deg)",
-// }));
+const FAIcon = ({ icon, color }: { icon: IconProp; color: string }) => {
+	return (
+		<FontAwesomeIcon
+			icon={icon}
+			size="xl"
+			style={{
+				color,
+				width: "24px",
+				height: "24px",
+			}}
+		/>
+	);
+};
 
 const BottomNav = () => {
 	const navigate = useNavigate();
+	const theme = useTheme();
+	const { isDarkMode } = useDarkMode();
 	return (
-		<StickBottomNavigation sx={{ backdropFilter: "blur(8px)", backgroundColor: "transparent" }}>
-			<StyledBottomNA aria-label="Planner" icon={<Egg />} onClick={() => navigate("/planner")} />
-			<StyledBottomNA label="Calendar" value="calendar" icon={<Event />} onClick={() => navigate("/calendar")} />
-			<StyledBottomNA label="Recipes" value="recipes" icon={<MenuBook />} onClick={() => navigate("/recipes")} />
+		<StickBottomNavigation
+			sx={{
+				backdropFilter: "blur(8px)",
+				backgroundColor: isDarkMode ? "hsl(154, 96%, 3%, 0.5)" : "hsl(25, 100%, 83%, 0.1)",
+			}}
+		>
+			<StyledBottomNA
+				aria-label="Plan"
+				icon={<FAIcon icon={faCarrot} color={theme.palette.primary.main} />}
+				onClick={() => navigate("/plan")}
+			/>
+			<StyledBottomNA
+				label="Templates"
+				value="templates"
+				icon={<FAIcon icon={faCalendar} color={theme.palette.primary.main} />}
+				onClick={() => navigate("/templates")}
+			/>
+			<StyledBottomNA
+				label="Recipes"
+				value="recipes"
+				icon={<FAIcon icon={faBookOpen} color={theme.palette.primary.main} />}
+				onClick={() => navigate("/recipes")}
+			/>
 			{/* TODO: on login set avatar */}
-			<StyledBottomNA label="Profile" value="profile" icon={<Person />} onClick={() => navigate("/profile")} />
+			<StyledBottomNA
+				label="Profile"
+				value="profile"
+				icon={<FAIcon icon={faUser} color={theme.palette.primary.main} />}
+				onClick={() => navigate("/profile")}
+			/>
 		</StickBottomNavigation>
 	);
 };

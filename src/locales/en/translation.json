@@ -37,7 +37,7 @@
             "age": "age",
             "daily_meal_count":  "Daily meal count",
             "water_consumption": "Water consumption",
-            "time_to_prepare": "Max time to prepare a meal"
+            "max_ready_time": "Max time to prepare a meal"
         },
         "min_max": {
             "title": "Min - Max",
@@ -53,8 +53,8 @@
             "username":  "Spoonacular username",
             "password": "Spoonacular password"
         },
-        "preferences": {
-            "title": "Preferences",
+        "settings": {
+            "title": "Settings",
             "dark_mode": "Prefer dark mode"
         },
         "notifications": {

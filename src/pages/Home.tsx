@@ -6,10 +6,9 @@ const Home = () => {
 	const { t } = useTranslation();
 
 	return (
-		<>
-			<Layout>Something here</Layout>
+		<Layout>
 			<Link href="/setup-information">{t("button")}</Link>
-		</>
+		</Layout>
 	);
 };
 

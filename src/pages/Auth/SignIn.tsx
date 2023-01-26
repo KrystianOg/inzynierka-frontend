@@ -1,5 +1,4 @@
 import { Box, Typography, Container, Avatar, IconButton, CircularProgress, Link } from "@mui/material";
-import { Close } from "@mui/icons-material";
 import { Helmet } from "react-helmet-async";
 import { TextField, Button } from "components/Rounded";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -8,6 +7,8 @@ import { SignInCredentials } from "types/auth";
 import { useSnackbar } from "notistack";
 import { useLazySignInQuery, useLazySignInWithOAuthQuery } from "app/supabase/auth";
 import { useTranslation } from "react-i18next";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const SignIn = () => {
 	const { t } = useTranslation();
@@ -114,7 +115,7 @@ const SignIn = () => {
 					sx={{ marginTop: "3rem" }}
 					onClick={() => navigate(from, { replace: true })}
 				>
-					{false ? <CircularProgress /> : <Close sx={{ width: "56px", height: "56px" }} />}
+					{false ? <CircularProgress /> : <FontAwesomeIcon icon={faTimes} />}
 				</IconButton>
 			</Box>
 		</Container>

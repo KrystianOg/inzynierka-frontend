@@ -1,5 +1,4 @@
 import { Container, MobileStepper, Button, Box, Typography } from "@mui/material";
-import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
 import { Step1, Step2, Step3, Step4, Step5, Step6, Step7, Step8 } from "./Steps";
 import { useNavigate } from "react-router-dom";
 import { useStep } from "usehooks-ts";
@@ -7,6 +6,8 @@ import { useEffect } from "react";
 import { Profile } from "types/user";
 import { useSnackbar } from "notistack";
 import { useUpdateProfileMutation } from "app/supabase/user";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 interface Step {
 	title: string;
@@ -73,12 +74,12 @@ const InformationSetup = () => {
 				nextButton={
 					<Button size="small" onClick={goToNextStep}>
 						Skip
-						<KeyboardArrowRight />
+						<FontAwesomeIcon icon={faAngleRight} size="lg" />
 					</Button>
 				}
 				backButton={
 					<Button size="small" onClick={goToPrevStep}>
-						<KeyboardArrowLeft />
+						<FontAwesomeIcon icon={faAngleLeft} size="lg" />
 						Back
 					</Button>
 				}

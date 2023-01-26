@@ -41,7 +41,8 @@ export const {
     useAutocompleteQuery,
     useLazySearchRecipesQuery,
     useSearchRecipesQuery,
-    useGetRecipeInformationQuery
+    useGetRecipeInformationQuery,
+    usePrefetch
 } = recipesApi
 
 export type {

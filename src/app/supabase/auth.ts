@@ -7,7 +7,7 @@ const authApi = supabaseApi.injectEndpoints({
         signIn: build.query<void, SignInWithPasswordCredentials>({
             queryFn: async (data) => {
                 const { error } = await supabase.auth.signInWithPassword(data)
-                if (error) return { error }
+                if (error) return { error: error.message }
 
                 return { data: undefined}
             },

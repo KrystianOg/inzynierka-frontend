@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { BottomNav, Fab } from "components";
 import { Container, Tabs, Tab } from "@mui/material";
-import { ModelTraining } from "@mui/icons-material";
 import MealsStepper from "./MealsStepper";
 import dayjs, { Dayjs } from "dayjs";
 import Card from "./PlannerCard";
-
 import weekPlan from "static/week-plan.json";
-import { type Weekday } from "../../types/planning";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRotateRight } from "@fortawesome/free-solid-svg-icons";
+import { Helmet } from "react-helmet-async";
+import Layout from "components/Layout";
 
 const Planner = () => {
 	const today = dayjs().day() - 1;
@@ -22,7 +23,8 @@ const Planner = () => {
 	};
 
 	return (
-		<Container sx={{ width: "100vw" }}>
+		<Layout>
+			<Helmet title="Planner | Diet Genius" />
 			<Tabs
 				value={tab}
 				onChange={handleChange}
@@ -38,10 +40,16 @@ const Planner = () => {
 			</Tabs>
 			{/* <MealsStepper day={weekPlan.week[days[tab]]} name={days[tab]} /> */}
 			<Fab sx={{ bottom: 72, top: "auto", ariaLabel: "Generate Day Plan" }} onClick={generateDayPlan}>
-				<ModelTraining sx={{ width: 36, height: 36 }} />
+				<FontAwesomeIcon
+					icon={faRotateRight}
+					style={{
+						width: "32px",
+						height: "32px",
+					}}
+				/>
 			</Fab>
 			<BottomNav />
-		</Container>
+		</Layout>
 	);
 };
 
