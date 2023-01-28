@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
-import { Button, Checkbox, FormControlLabel } from "@mui/material";
-import { BoxOutlined } from "./Styled";
+import { useState } from "react";
+import { Button, Checkbox } from "@mui/material";
 
 type CheckBoxProps = {
 	label: string;

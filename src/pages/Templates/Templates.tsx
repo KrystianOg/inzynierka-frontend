@@ -1,7 +1,6 @@
 // import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { Box, Tab } from "@mui/material";
-import Layout from "components/Layout";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Fab } from "components";
@@ -25,7 +24,7 @@ const Template = () => {
 	};
 
 	return (
-		<Layout>
+		<>
 			<Helmet title="Template | Diet Genius" />
 			<TabContext value={tab}>
 				<TabList onChange={handleChange} variant="fullWidth" sx={{ borderBottom: 1, borderColor: "divider" }}>
@@ -56,7 +55,7 @@ const Template = () => {
 					}}
 				/>
 			</Fab>
-		</Layout>
+		</>
 	);
 };
 

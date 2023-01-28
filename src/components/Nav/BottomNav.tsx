@@ -5,6 +5,7 @@ import { faCarrot, faUser, faBookOpen, faCalendar } from "@fortawesome/free-soli
 import { useTheme } from "@mui/material/styles";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { useDarkMode } from "usehooks-ts";
+import { useTranslation } from "react-i18next";
 
 const FAIcon = ({ icon, color }: { icon: IconProp; color: string }) => {
 	return (
@@ -21,6 +22,7 @@ const FAIcon = ({ icon, color }: { icon: IconProp; color: string }) => {
 };
 
 const BottomNav = () => {
+	const { t } = useTranslation();
 	const navigate = useNavigate();
 	const theme = useTheme();
 	const { isDarkMode } = useDarkMode();
@@ -37,20 +39,20 @@ const BottomNav = () => {
 				onClick={() => navigate("/plan")}
 			/>
 			<StyledBottomNA
-				label="Templates"
+				label={t("navigation.templates")}
 				value="templates"
 				icon={<FAIcon icon={faCalendar} color={theme.palette.primary.main} />}
 				onClick={() => navigate("/templates")}
 			/>
 			<StyledBottomNA
-				label="Recipes"
+				label={t("navigation.recipes")}
 				value="recipes"
 				icon={<FAIcon icon={faBookOpen} color={theme.palette.primary.main} />}
 				onClick={() => navigate("/recipes")}
 			/>
 			{/* TODO: on login set avatar */}
 			<StyledBottomNA
-				label="Profile"
+				label={t("navigation.profile")}
 				value="profile"
 				icon={<FAIcon icon={faUser} color={theme.palette.primary.main} />}
 				onClick={() => navigate("/profile")}

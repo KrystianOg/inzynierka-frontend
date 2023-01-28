@@ -15,6 +15,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useSnackbar } from "notistack";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface ExpandMoreProps extends IconButtonProps {
 	expand: boolean;
@@ -32,6 +33,7 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 }));
 
 const TemplateCard = ({ template }: { template: Template }) => {
+	const { t } = useTranslation();
 	const { enqueueSnackbar } = useSnackbar();
 	const navigate = useNavigate();
 	const [expanded, setExpanded] = useState(false);
@@ -48,7 +50,8 @@ const TemplateCard = ({ template }: { template: Template }) => {
 	return (
 		<Card>
 			<CardHeader
-				title={template.name === "" ? "Untitled" : template.name}
+				sx={{ textTransform: "capitalize" }}
+				title={template.name === "" ? t("templates.card.untitled") : template.name}
 				// subheader={template.name && template.id}
 			/>
 			<Collapse in={expanded} timeout="auto" unmountOnExit>
@@ -60,26 +63,30 @@ const TemplateCard = ({ template }: { template: Template }) => {
 					}}
 				>
 					<Typography paragraph>{template.public ? "public" : "private"}</Typography>
-					<Typography paragraph>workout: {template.workout}</Typography>
-					<Typography paragraph>max ready time: {template.max_ready_time}</Typography>
+					<Typography paragraph>
+						{t("profile.preferences.workout")}: {template.workout}
+					</Typography>
+					<Typography paragraph>
+						{t("profile.your_info.max_ready_time")} {template.max_ready_time}
+					</Typography>
 
 					<Typography paragraph>
-						Min calories: <span>{template?.min_calories}</span>
+						{t("profile.min_max.min_calories")}: <span>{template?.min_calories}</span>
 					</Typography>
 					<Typography paragraph>
-						Max calories: <span>{template?.max_calories}</span>
+						{t("profile.min_max.max_calories")}: <span>{template?.max_calories}</span>
 					</Typography>
 					<Typography paragraph>
-						Min protein: <span>{template?.min_protein}</span>
+						{t("profile.min_max.min_protein")}: <span>{template?.min_protein}</span>
 					</Typography>
 					<Typography paragraph>
-						Max protein: <span>{template?.max_protein}</span>
+						{t("profile.min_max.max_protein")}: <span>{template?.max_protein}</span>
 					</Typography>
 					<Typography paragraph>
-						Min carbs: <span>{template?.min_carbs}</span>
+						{t("profile.min_max.min_carbs")}: <span>{template?.min_carbs}</span>
 					</Typography>
 					<Typography paragraph>
-						Max carbs: <span>{template?.max_carbs}</span>
+						{t("profile.min_max.max_carbs")}: <span>{template?.max_carbs}</span>
 					</Typography>
 				</Box>
 			</Collapse>

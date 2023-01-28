@@ -30,7 +30,6 @@ import { useDarkMode } from "usehooks-ts";
 import { useTranslation } from "react-i18next";
 import { Center } from "components";
 import { Helmet } from "react-helmet-async";
-import Layout from "components/Layout";
 import { Workout } from "types/enum";
 import { SmallAvatar, StyledAvatar, ProfileTabPanel as TabPanel } from "./ProfileComponents";
 
@@ -93,7 +92,7 @@ const ProfilePage = () => {
 	};
 
 	return (
-		<Layout>
+		<>
 			<Helmet title="Profile | Diet Genius" />
 
 			<Center
@@ -136,6 +135,7 @@ const ProfilePage = () => {
 				<TabList
 					onChange={handleTabChange}
 					variant="scrollable"
+					allowScrollButtonsMobile
 					sx={{
 						margin: "auto",
 						maxWidth: "650px",
@@ -302,7 +302,7 @@ const ProfilePage = () => {
 					<FormControl>
 						<OutlinedInput
 							type="number"
-							endAdornment={<InputAdornment position="end">g</InputAdornment>}
+							endAdornment={<InputAdornment position="end">kcal</InputAdornment>}
 							aria-describedby="outlined-min-calories-helper-text"
 							inputProps={{
 								"aria-label": "min-calories",
@@ -323,7 +323,7 @@ const ProfilePage = () => {
 					<FormControl>
 						<OutlinedInput
 							type="number"
-							endAdornment={<InputAdornment position="end">g</InputAdornment>}
+							endAdornment={<InputAdornment position="end">kcal</InputAdornment>}
 							aria-describedby="outlined-max-calories-helper-text"
 							inputProps={{
 								"aria-label": "max-calories",
@@ -513,7 +513,7 @@ const ProfilePage = () => {
 				</TabPanel>
 			</TabContext>
 			<BottomNav />
-		</Layout>
+		</>
 	);
 };
 

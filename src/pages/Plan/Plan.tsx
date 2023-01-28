@@ -9,14 +9,15 @@ import weekPlan from "static/week-plan.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRotateRight } from "@fortawesome/free-solid-svg-icons";
 import { Helmet } from "react-helmet-async";
-import Layout from "components/Layout";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import MealsStepper from "./MealsStepper";
 import { useSnackbar } from "notistack";
+import { useTranslation } from "react-i18next";
 
 const week = weekPlan["week"] as unknown as Week;
 
 const Planner = () => {
+	const { t } = useTranslation();
 	const today = weekday[dayjs().day() - 1];
 	const [tab, setTab] = useState<Weekday>(today ?? "monday");
 	const { enqueueSnackbar, closeSnackbar } = useSnackbar();
@@ -27,9 +28,9 @@ const Planner = () => {
 
 	const generateDayPlan = (type: "week" | "day", weekday?: Weekday) => {
 		if (type === "day" && !weekday) {
-			throw new Error("Weekday is required for day plan");
+			throw new Error(t("planner.error.no_weekday").toString());
 		}
-		enqueueSnackbar("Are you sure you want to generate new plan? This action will override your current plan?", {
+		enqueueSnackbar(t("planner.generate_new_question"), {
 			variant: "info",
 			autoHideDuration: 6000,
 			anchorOrigin: {
@@ -44,10 +45,10 @@ const Planner = () => {
 					}}
 				>
 					<Button variant="contained" onClick={() => closeSnackbar(id)}>
-						YES!
+						{t("planner.yes")}
 					</Button>
 					<Button variant="contained" onClick={() => closeSnackbar(id)}>
-						Dismiss
+						{t("planner.dismiss")}
 					</Button>
 				</Box>
 			),
@@ -55,13 +56,14 @@ const Planner = () => {
 	};
 
 	return (
-		<Layout>
-			<Helmet title="Planner | Diet Genius" />
+		<>
+			<Helmet title={`${t("planner.title")} | Diet Genius`} />
 
 			<TabContext value={tab}>
 				<TabList
 					onChange={handleChange}
-					variant="fullWidth"
+					variant="scrollable"
+					allowScrollButtonsMobile
 					sx={{
 						borderBottom: 1,
 						borderColor: "divider",
@@ -75,6 +77,7 @@ const Planner = () => {
 							sx={{
 								display: "flex",
 								justifyContent: "center",
+								textTransform: "capitalize",
 							}}
 						/>
 					))}
@@ -89,7 +92,6 @@ const Planner = () => {
 				})}
 			</TabContext>
 
-			{/* <MealsStepper day={weekPlan.week[days[tab]]} name={days[tab]} /> */}
 			<Fab
 				sx={{ bottom: 72, top: "auto", ariaLabel: "Generate Day Plan" }}
 				onClick={() => generateDayPlan("week")}
@@ -103,7 +105,7 @@ const Planner = () => {
 				/>
 			</Fab>
 			<BottomNav />
-		</Layout>
+		</>
 	);
 };
 

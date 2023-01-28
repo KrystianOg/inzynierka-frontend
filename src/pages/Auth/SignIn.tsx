@@ -31,11 +31,18 @@ const SignIn = () => {
 	const handleSignIn: SubmitHandler<SignInCredentials> = async credentials => {
 		const { error, isSuccess } = await signIn(credentials);
 
-		console.log(result);
-		if (error)
-			enqueueSnackbar(t("error.something_went_wrong"), {
-				variant: "error",
-			});
+		if (error) {
+			console.log(error);
+			if (error === "Invalid login credentials") {
+				enqueueSnackbar(t("error.invalid_login_credentials"), {
+					variant: "error",
+				});
+			} else if (error === "Email not confirmed") {
+				enqueueSnackbar(t("error.email_not_confirmed"), {
+					variant: "error",
+				});
+			}
+		}
 		if (isSuccess) navigate(from, { replace: true });
 	};
 

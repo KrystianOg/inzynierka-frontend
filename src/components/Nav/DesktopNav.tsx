@@ -10,8 +10,10 @@ import { useNavigate, useLocation } from "react-router-dom";
 import DrawerNav from "./DrawerNav";
 import { NavLink } from "./NavComponents";
 import { useDarkMode } from "usehooks-ts";
+import { useTranslation } from "react-i18next";
 
 const DesktopNav = () => {
+	const { t } = useTranslation();
 	const [open, setOpen] = useState(false);
 	const theme = useTheme();
 	const navigate = useNavigate();
@@ -79,18 +81,18 @@ const DesktopNav = () => {
 						>
 							{isSession ? (
 								<>
-									<NavLink href="/plan">plan</NavLink>
-									<NavLink href="/templates">templates</NavLink>
-									<NavLink href="/recipes">recipes</NavLink>
-									<NavLink href="/profile">profile</NavLink>
+									<NavLink href="/plan">{t("navigation.plan")}</NavLink>
+									<NavLink href="/templates">{t("navigation.templates")}</NavLink>
+									<NavLink href="/recipes">{t("navigation.recipes")}</NavLink>
+									<NavLink href="/profile">{t("navigation.profile")}</NavLink>
 									<NavLink href="/" onClick={handleSignOut}>
-										sign out
+										{t("navigation.signout")}
 									</NavLink>
 								</>
 							) : (
 								<>
-									<NavLink href="/signin">sign in</NavLink>
-									<NavLink href="/signup">sign up</NavLink>
+									<NavLink href="/signin">{t("navigation.signin")}</NavLink>
+									<NavLink href="/signup">{t("navigation.signup")}</NavLink>
 								</>
 							)}
 						</Box>

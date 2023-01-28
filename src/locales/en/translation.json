@@ -5,7 +5,7 @@
     },
     "navigation": {
         "plan": "plan",
-        "calendar": "calendar",
+        "templates": "templates",
         "recipes": "recipes",
         "profile": "profile",
         "signout": "sign out",
@@ -22,13 +22,67 @@
         "forgot_password": "forgot password?",
         "no_account": "don't have an account? sign up"
     },
+    "signup": {
+        "title": "sign up",
+        "email_address": "email address",
+        "password": "password",
+        "already_a_member": "Already a member? Sign in",
+        "error": {
+            "email_required": "Email is required",
+            "password_required": "Password is required",
+            "invalid_email": "Invalid email",
+            "password_min_length": "Password must be at least 8 characters",
+            "password_pattern": "Password must contain at least one uppercase letter, one lowercase letter, and one number",
+            "password_confirm": "You have to confirm password",
+            "password_do_not_match": "Passwords do not match"
+        }
+    },
     "setup_information": {
 
+    },
+    "recipes": {
+        "search": "search recipes"
+    },
+    "templates": {
+        "add_title": "Add Template",
+        "your_name": "Your template's name",
+        "create": "Create template",
+        "card": {
+            "untitled": "untitled",
+            "public": "public",
+            "private": "private"
+        }
+    },
+    "planner": {
+        "title": "Planner",
+        "generate_new_question": "Are you sure you want to generate new plan? This action will override your current plan?",
+        "yes": "YES!",
+        "dismiss": "Dismiss",
+        "meal_stepper": {
+            "breakfast": "breakfast",
+            "lunch": "lunch",
+            "dinner": "dinner",
+            "last_step": "last step",
+            "finish": "finish",
+            "next": "next",
+            "back": "back"
+        },
+        "card": {
+            "max_ready_time": "Ready in minutes:",
+            "servings": "Servings:",
+            "navigate_to_recipe": "Navigate to recipe"
+        },
+        "error": {
+            "no_weekday": "Weekday is required for day plan"
+        }
     },
     "profile": {
         "email": {
             "copied": "email copied to clipboard",
             "copy_fail": "email copying failed"
+        },
+        "measurements": {
+            "title": "measurements"
         },
         "your_info": {
             "title": "your info",
@@ -38,6 +92,9 @@
             "daily_meal_count":  "Daily meal count",
             "water_consumption": "Water consumption",
             "max_ready_time": "Max time to prepare a meal"
+        },
+        "preferences": {
+            "workout": "workout"
         },
         "min_max": {
             "title": "Min - Max",
@@ -68,6 +125,13 @@
         "an_error_occurred": "An error occurred",
         "something_went_wrong": "Something went wrong",
         "not_found": "Page not found",
+        "go_back": "Go back",
+        "invalid_login_credentials": "Invalid login credentials",
+        "email_not_confirmed": "Email not confirmed"
+    },
+    "404": {
+        "title": "404",
+        "description": "Page not found",
         "go_back": "Go back"
     },
     "success": {

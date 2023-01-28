@@ -40,10 +40,6 @@ const InformationSetup = () => {
 
 	const { canGoToNextStep, canGoToPrevStep, goToNextStep, goToPrevStep, reset, setStep } = helpers;
 
-	useEffect(() => {
-		console.log(currentStep);
-	}, [currentStep]);
-
 	const updateUser = async (profile: Profile) => updateProfile(profile);
 
 	const handleNext = () => {

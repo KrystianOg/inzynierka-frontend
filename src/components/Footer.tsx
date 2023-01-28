@@ -4,6 +4,7 @@ import { useWindowSize } from "usehooks-ts";
 const Footer = () => {
 	const { height } = useWindowSize();
 
+	return null;
 	return (
 		<Container
 			sx={{

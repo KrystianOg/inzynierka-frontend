@@ -1,4 +1,3 @@
-import Layout from "components/Layout";
 import { Helmet } from "react-helmet-async";
 import { useParams, useNavigate } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -11,9 +10,10 @@ import useAuth from "hooks/useAuth";
 import { Workout } from "types/enum";
 import type { AddTemplate as AddTemplateT } from "types/templates";
 import { useCreateTemplateMutation } from "app/supabase/templates";
-import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 const AddTemplate = () => {
+	const { t } = useTranslation();
 	const { type } = useParams<{ type: string }>();
 	const navigate = useNavigate();
 	const { user } = useAuth();
@@ -35,7 +35,7 @@ const AddTemplate = () => {
 		if ("error" in res) {
 			setError("name", {
 				type: "manual",
-				message: "Something went wrong",
+				message: t("error.something_went_wrong").toString(),
 			});
 		}
 
@@ -44,13 +44,9 @@ const AddTemplate = () => {
 		}
 	};
 
-	useEffect(() => {
-		console.table();
-	}, []);
-
 	return (
-		<Layout>
-			<Helmet title={`Add Template ${type ?? ""}| Diet Genius`} />
+		<>
+			<Helmet title={`${t("templates.add_title")} ${type ?? ""}| Diet Genius`} />
 
 			{/* todo: changeable meal count */}
 			<Center flexDirection="column" gap="1rem">
@@ -77,7 +73,7 @@ const AddTemplate = () => {
 							},
 							marginBottom: "1rem",
 						}}
-						label="Your template's name"
+						label={t("templates.your_name")}
 						autoFocus
 						{...register("name", {
 							required: false,
@@ -86,7 +82,7 @@ const AddTemplate = () => {
 					{!isLoading ? (
 						<>
 							<TextFieldInherit
-								label="Time to prepare"
+								label={t("profile.your_info.max_ready_time")}
 								type="number"
 								defaultValue={profile?.max_ready_time}
 								fullWidth
@@ -94,7 +90,7 @@ const AddTemplate = () => {
 								name="max_ready_time"
 							/>
 							<SelectFieldInherit
-								label="Workout"
+								label={t("profile.preferences.workout")}
 								defaultValue={profile?.workout}
 								options={Object.keys(Workout)}
 								{...register("workout", {
@@ -102,7 +98,7 @@ const AddTemplate = () => {
 								})}
 							/>
 							<SelectFieldInherit
-								label="Daily meal count"
+								label={t("profile.your_info.daily_meal_count")}
 								defaultValue={profile?.daily_meal_count}
 								options={[1, 2, 3, 4, 5]}
 								{...register("meal_count", {
@@ -111,7 +107,7 @@ const AddTemplate = () => {
 							/>
 							<div />
 							<TextFieldInherit
-								label="Min calories"
+								label={t("profile.your_info.min_calories")}
 								type="number"
 								defaultValue={profile?.min_calories}
 								inputProps={{
@@ -123,7 +119,7 @@ const AddTemplate = () => {
 								name="min_calories"
 							/>
 							<TextFieldInherit
-								label="Max calories"
+								label={t("profile.your_info.max_calories")}
 								type="number"
 								defaultValue={profile?.max_calories}
 								inputProps={{
@@ -135,28 +131,28 @@ const AddTemplate = () => {
 								name="max_calories"
 							/>
 							<TextFieldInherit
-								label="Min protein"
+								label={t("profile.your_info.min_protein")}
 								type="number"
 								defaultValue={profile?.min_protein}
 								register={register}
 								name="min_protein"
 							/>
 							<TextFieldInherit
-								label="Max protein"
+								label={t("profile.your_info.max_protein")}
 								type="number"
 								defaultValue={profile?.max_protein}
 								register={register}
 								name="max_protein"
 							/>
 							<TextFieldInherit
-								label="Min carbs"
+								label={t("profile.your_info.min_carbs")}
 								type="number"
 								defaultValue={profile?.min_carbs}
 								register={register}
 								name="min_carbs"
 							/>
 							<TextFieldInherit
-								label="Max carbs"
+								label={t("profile.your_info.max_carbs")}
 								type="number"
 								defaultValue={profile?.max_carbs}
 								register={register}
@@ -192,11 +188,11 @@ const AddTemplate = () => {
 							marginTop: "1rem",
 						}}
 					>
-						{isCreating ? <CircularProgress size={24} /> : "Create template"}
+						{isCreating ? <CircularProgress size={24} /> : t("templates.create")}
 					</Button>
 				</Box>
 			</Center>
-		</Layout>
+		</>
 	);
 };
 

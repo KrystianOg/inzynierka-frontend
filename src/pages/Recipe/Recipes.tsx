@@ -11,12 +11,13 @@ import removeEmpty from "utils/removeEmpty";
 //TODO remove static
 // import search_recipes from "static/search_recipes.json";
 import RecipeCard from "./RecipeCard";
-import Layout from "components/Layout";
 import { Helmet } from "react-helmet-async";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from "react-i18next";
 
 const Recipes = () => {
+	const { t } = useTranslation();
 	const queryRef = useRef<HTMLInputElement>(null);
 	const { user } = useAuth();
 	const { data: profile } = useGetProfileQuery(user?.id!);
@@ -74,12 +75,12 @@ const Recipes = () => {
 	};
 
 	return (
-		<Layout>
+		<>
 			<Helmet title="Recipes | Diet Genius" />
 
 			<TextField
 				onKeyDown={e => handleKeyDown(e.key)}
-				label="Search Recipes"
+				label={t("recipes.search")}
 				inputRef={queryRef}
 				InputProps={{
 					endAdornment: (
@@ -102,6 +103,7 @@ const Recipes = () => {
 						sm: "66%",
 						md: "50%",
 					},
+					textTransform: "capitalize",
 				}}
 			/>
 			{recipes && (
@@ -136,7 +138,7 @@ const Recipes = () => {
 			)}
 
 			<BottomNav />
-		</Layout>
+		</>
 	);
 };
 

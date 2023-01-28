@@ -10,7 +10,7 @@ import {
 	Plan,
 	InformationSetup,
 	Templates,
-	Template,
+	// Template,
 	AddTemplate,
 } from "pages";
 
@@ -31,7 +31,7 @@ export default () => {
 				<Route path="recipes" element={<Recipes />} />
 				<Route path="plan" element={<Plan />} />
 				<Route path="templates" element={<Templates />} />
-				<Route path="templates/:id" element={<Template />} /> // TODO: "AddTemplate
+				<Route path="templates/:id" element={<div />} /> // TODO: "AddTemplate
 				<Route path="templates/create" element={<AddTemplate />} />
 			</Route>
 

@@ -1,19 +1,26 @@
-import { Box, Button, Step, StepContent, StepLabel, Stepper, Typography } from "@mui/material";
+import { Box, Button, Slide, Step, StepContent, StepLabel, Stepper, Typography } from "@mui/material";
 import FinishAnim from "./FinishAnim";
 import type { Day } from "types/planning";
-import Card from "./PlannerCard";
+import PlannerCard from "./PlannerCard";
 import { useStep } from "usehooks-ts";
+import { useTranslation } from "react-i18next";
 
 interface MealStepperProps {
 	day: Day;
-	name?: string;
 	disabled?: boolean;
 }
 
 ///build on top of MUI Box
-const MealsStepper = ({ day, disabled, name }: MealStepperProps) => {
+const MealsStepper = ({ day, disabled }: MealStepperProps) => {
+	const { t } = useTranslation();
+	const meals = [
+		t("planner.meal_stepper.breakfast"),
+		t("planner.meal_stepper.lunch"),
+		t("planner.meal_stepper.dinner"),
+	]; // TODO: change that obviously
+
 	const [currentStep, { canGoToNextStep, canGoToPrevStep, goToNextStep, goToPrevStep, reset, setStep }] = useStep(
-		day.meals.length
+		day.meals.length + 1
 	);
 
 	return (
@@ -28,41 +35,41 @@ const MealsStepper = ({ day, disabled, name }: MealStepperProps) => {
 				{day.meals.map((step, index) => (
 					<Step key={step.id}>
 						<StepLabel
+							sx={{ textTransform: "capitalize" }}
 							optional={
 								currentStep === day.meals.length && index === day.meals.length ? (
-									<Typography variant="caption">Last step</Typography>
+									<Typography variant="caption">{t("planner.meal_stepper.last_step")}</Typography>
 								) : null
 							}
 						>
-							{step.title}
+							{meals[index]}
 						</StepLabel>
 						<StepContent>
-							<Typography>{step.sourceUrl}</Typography>
-							<Box sx={{ mb: 2 }}>
-								<Card meal={step} />
-
-								<div>
-									<Button
-										variant="contained"
-										onClick={goToNextStep}
-										sx={{ mt: 1, mr: 1, borderRadius: "50px" }}
-									>
-										{currentStep === day.meals.length - 1 ? "Finish" : "Next"}
-									</Button>
-									<Button
-										disabled={!canGoToPrevStep}
-										onClick={goToPrevStep}
-										sx={{ mt: 1, mr: 1, borderRadius: "50px" }}
-									>
-										Back
-									</Button>
-								</div>
-							</Box>
+							<PlannerCard meal={step} />
+							<div>
+								<Button
+									variant="contained"
+									onClick={goToNextStep}
+									disabled={!canGoToNextStep}
+									sx={{ mt: 1, mr: 1, borderRadius: "50px" }}
+								>
+									{currentStep === day.meals.length
+										? t("planner.meal_stepper.finish")
+										: t("planner.meal_stepper.next")}
+								</Button>
+								<Button
+									disabled={!canGoToPrevStep}
+									onClick={goToPrevStep}
+									sx={{ mt: 1, mr: 1, borderRadius: "50px" }}
+								>
+									{t("planner.meal_stepper.back")}
+								</Button>
+							</div>
 						</StepContent>
 					</Step>
 				))}
 			</Stepper>
-			{currentStep === day.meals.length && <FinishAnim />}
+			{currentStep === day.meals.length + 1 && <FinishAnim />}
 		</Box>
 	);
 };

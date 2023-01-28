@@ -8,6 +8,7 @@ import useAuth from "hooks/useAuth";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from "react-i18next";
 
 interface DrawerNavProps {
 	open: boolean;
@@ -15,6 +16,7 @@ interface DrawerNavProps {
 }
 
 const DrawerNav = ({ open, setOpen }: DrawerNavProps) => {
+	const { t } = useTranslation();
 	const { enqueueSnackbar } = useSnackbar();
 
 	const [signOut, { isFetching }] = useLazySignOutQuery();
@@ -43,18 +45,18 @@ const DrawerNav = ({ open, setOpen }: DrawerNavProps) => {
 			<Stack height="100%" alignItems="stretch" justifyContent="center">
 				{isSession ? (
 					<>
-						<DrawerNavLink href="/plan">plan</DrawerNavLink>
-						<DrawerNavLink href="/templates">templates</DrawerNavLink>
-						<DrawerNavLink href="/recipes">recipes</DrawerNavLink>
-						<DrawerNavLink href="/profile">profile</DrawerNavLink>
+						<DrawerNavLink href="/plan">{t("navigation.plan")}</DrawerNavLink>
+						<DrawerNavLink href="/templates">{t("navigation.templates")}</DrawerNavLink>
+						<DrawerNavLink href="/recipes">{t("navigation.recipes")}</DrawerNavLink>
+						<DrawerNavLink href="/profile">{t("navigation.profile")}</DrawerNavLink>
 						<DrawerNavLink href="/" onClick={handleSignout}>
-							{isFetching ? <CircularProgress /> : "SIGN OUT"}
+							{isFetching ? <CircularProgress /> : t("navigation.signout").toString()}
 						</DrawerNavLink>
 					</>
 				) : (
 					<>
-						<DrawerNavLink href="/signin">sign in</DrawerNavLink>
-						<DrawerNavLink href="/signup">sign up</DrawerNavLink>
+						<DrawerNavLink href="/signin">{t("navigation.signin")}</DrawerNavLink>
+						<DrawerNavLink href="/signup">{t("navigation.signup")}</DrawerNavLink>
 					</>
 				)}
 				<IconButton onClick={() => setOpen(false)}>
