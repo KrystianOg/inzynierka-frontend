@@ -9,8 +9,10 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { useGetTemplatesQuery } from "app/supabase/templates";
 import TemplateCard from "./TemplateCard";
+import { useTranslation } from "react-i18next";
 
 const Template = () => {
+	const { t } = useTranslation();
 	const [tab, setTab] = useState<"week" | "day">("week");
 	const navigate = useNavigate();
 	const { data: templates } = useGetTemplatesQuery();
@@ -28,8 +30,8 @@ const Template = () => {
 			<Helmet title="Template | Diet Genius" />
 			<TabContext value={tab}>
 				<TabList onChange={handleChange} variant="fullWidth" sx={{ borderBottom: 1, borderColor: "divider" }}>
-					<Tab label="week" value="week" />
-					<Tab label="day" value="day" />
+					<Tab label={t("profile.templates.week")} value="week" />
+					<Tab label={t("profile.templates.day")} value="day" />
 				</TabList>
 				<TabPanel value="week">
 					<Box
@@ -44,7 +46,7 @@ const Template = () => {
 						))}
 					</Box>
 				</TabPanel>
-				<TabPanel value="day">Day</TabPanel>
+				<TabPanel value="day"></TabPanel>
 			</TabContext>
 			<Fab sx={{ bottom: 72, top: "auto", ariaLabel: "Generate Day Plan" }} onClick={handleAddTemplate}>
 				<FontAwesomeIcon

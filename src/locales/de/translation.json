@@ -1,0 +1,134 @@
+{
+    "info": {
+        "meal_planner": "DietGenius: Maaltijdplanner",
+        "nutrition_coach": "DietGenius: Voedingscoach"
+    },
+    "navigation": {
+        "plan": "plan",
+        "templates": "sjablonen",
+        "recipes": "recepten",
+        "profile": "profiel",
+        "signout": "uitloggen",
+        "signin": "inloggen",
+        "signup": "aanmelden",
+        "close": "sluiten"
+    },
+    "signin": {
+        "title": "inloggen",
+        "email_address": "e-mailadres",
+        "password": "wachtwoord",
+        "or": "of",
+        "with_google": "inloggen met google",
+        "forgot_password": "wachtwoord vergeten?",
+        "no_account": "nog geen account? meld je aan"
+    },
+    "signup": {
+        "title": "aanmelden",
+        "email_address": "e-mailadres",
+        "password": "wachtwoord",
+        "already_a_member": "Al lid? Log in",
+        "error": {
+            "email_required": "E-mail is verplicht",
+            "password_required": "Wachtwoord is verplicht",
+            "invalid_email": "Ongeldig e-mailadres",
+            "password_min_length": "Wachtwoord moet minimaal 8 tekens zijn",
+            "password_pattern": "Wachtwoord moet minimaal één hoofdletter, één kleine letter en één nummer bevatten",
+            "password_confirm": "U moet het wachtwoord bevestigen",
+            "password_do_not_match": "Wachtwoorden komen niet overeen"
+        }
+    },
+    "recipes": {
+        "search": "zoek recepten"
+    },
+    "templates": {
+        "add_title": "Sjabloon Toevoegen",
+        "your_name": "De naam van uw sjabloon",
+        "create": "Maak sjabloon",
+        "card": {
+            "untitled": "zonder titel",
+            "public": "openbaar",
+            "private": "privaat"
+        }
+    },
+    "planner": {
+        "title": "Planner",
+        "generate_new_question": "Weet je zeker dat je een nieuw plan wilt genereren? Deze actie zal je huidige plan overschrijven?",
+        "yes": "JA!",
+        "dismiss": "Sluiten",
+        "meal_stepper": {
+            "breakfast": "ontbijt",
+            "lunch": "lunch",
+            "dinner": "diner",
+            "last_step": "laatste stap",
+            "finish": "voltooien",
+            "next": "volgende",
+            "back": "terug"
+        },
+        "card": {
+            "max_ready_time": "Klaar in minuten:",
+            "servings": "Porties:",
+            "navigate_to_recipe": "Navigeer naar recept"
+        },
+        "error": {
+            "no_weekday": "Dag van de week is vereist voor dagplan"
+        }
+    },
+    "profile": {
+        "email": {
+            "copied": "e-mail gekopieerd naar klembord",
+            "copy_fail": "kopiëren van e-mail mislukt"
+        },
+        "measurements": {
+            "title": "metingen"
+        },
+        "your_info": {
+            "title": "jouw info",
+            "height": "lengte",
+            "weight": "gewicht",
+            "age": "leeftijd",
+            "daily_meal_count":  "Aantal maaltijden per dag",
+            "water_consumption": "Waterconsumptie",
+            "max_ready_time": "Maximale bereidingstijd voor een maaltijd"
+        },
+        "preferences": {
+            "workout": "workout"
+        },
+        "min_max": {
+            "title": "Min - Max",
+            "min_calories": "Min calorieën",
+            "max_calories": "Max calorieën",
+            "min_protein": "Min eiwit",
+            "max_protein": "Max eiwit",
+            "min_carbs": "Min koolhydraten",
+            "max_carbs": "Max koolhydraten"
+        },
+        "spoonacular": {
+            "title": "Spoonacular",
+            "username": "Spoonacular gebruikersnaam",
+            "password": "Spoonacular wachtwoord"
+        },
+        "settings": {
+            "title": "Instellingen",
+            "dark_mode": "Voorkeur voor donkere modus"
+        },
+        "notifications": {
+            "title": "Notificaties",
+            "monthly_summary": "Maandelijkse samenvatting",
+            "weekly_summary": "Wekelijkse samenvatting",
+            "daily_reminder": "Dagelijkse herinnering"
+        }
+    },
+    "error": {
+        "an_error_occurred": "Er is een fout opgetreden",
+        "something_went_wrong": "Er is iets fout gegaan",
+        "not_found": "Pagina niet gevonden",
+        "go_back": "Ga terug",
+        "invalid_login_credentials": "Ongeldige inloggegevens",
+        "email_not_confirmed": "E-mail niet bevestigd"
+    },
+    "404": {
+        "title": "404",
+        "description": "Pagina niet gevonden",
+        "go_back": "Ga terug"
+    }
+}

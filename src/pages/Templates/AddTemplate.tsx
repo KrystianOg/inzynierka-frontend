@@ -82,7 +82,7 @@ const AddTemplate = () => {
 					{!isLoading ? (
 						<>
 							<TextFieldInherit
-								label={t("profile.your_info.max_ready_time")}
+								label={t("profile.preferences.max_ready_time")}
 								type="number"
 								defaultValue={profile?.max_ready_time}
 								fullWidth
@@ -98,7 +98,7 @@ const AddTemplate = () => {
 								})}
 							/>
 							<SelectFieldInherit
-								label={t("profile.your_info.daily_meal_count")}
+								label={t("profile.preferences.daily_meal_count")}
 								defaultValue={profile?.daily_meal_count}
 								options={[1, 2, 3, 4, 5]}
 								{...register("meal_count", {
@@ -107,7 +107,7 @@ const AddTemplate = () => {
 							/>
 							<div />
 							<TextFieldInherit
-								label={t("profile.your_info.min_calories")}
+								label={t("profile.min_max.min_calories")}
 								type="number"
 								defaultValue={profile?.min_calories}
 								inputProps={{
@@ -119,7 +119,7 @@ const AddTemplate = () => {
 								name="min_calories"
 							/>
 							<TextFieldInherit
-								label={t("profile.your_info.max_calories")}
+								label={t("profile.min_max.max_calories")}
 								type="number"
 								defaultValue={profile?.max_calories}
 								inputProps={{
@@ -131,28 +131,28 @@ const AddTemplate = () => {
 								name="max_calories"
 							/>
 							<TextFieldInherit
-								label={t("profile.your_info.min_protein")}
+								label={t("profile.min_max.min_protein")}
 								type="number"
 								defaultValue={profile?.min_protein}
 								register={register}
 								name="min_protein"
 							/>
 							<TextFieldInherit
-								label={t("profile.your_info.max_protein")}
+								label={t("profile.min_max.max_protein")}
 								type="number"
 								defaultValue={profile?.max_protein}
 								register={register}
 								name="max_protein"
 							/>
 							<TextFieldInherit
-								label={t("profile.your_info.min_carbs")}
+								label={t("profile.min_max.min_carbs")}
 								type="number"
 								defaultValue={profile?.min_carbs}
 								register={register}
 								name="min_carbs"
 							/>
 							<TextFieldInherit
-								label={t("profile.your_info.max_carbs")}
+								label={t("profile.min_max.max_carbs")}
 								type="number"
 								defaultValue={profile?.max_carbs}
 								register={register}

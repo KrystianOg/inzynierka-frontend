@@ -67,7 +67,7 @@ const TemplateCard = ({ template }: { template: Template }) => {
 						{t("profile.preferences.workout")}: {template.workout}
 					</Typography>
 					<Typography paragraph>
-						{t("profile.your_info.max_ready_time")} {template.max_ready_time}
+						{t("profile.preferences.max_ready_time")} {template.max_ready_time}
 					</Typography>
 
 					<Typography paragraph>
