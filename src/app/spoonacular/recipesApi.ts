@@ -13,7 +13,6 @@ const recipesApi = spoonacularApi.injectEndpoints({
             query: (query) => ({
                 url: 'recipes/autocomplete',
                 params: {
-                    apiKey: import.meta.env.VITE_APP_SPOONACULAR_API_KEY,
                     number: 10,
                     query,
                 },
@@ -25,7 +24,6 @@ const recipesApi = spoonacularApi.injectEndpoints({
                 params: {
                     ...params,
                     instructionsRequired: true,
-                    apiKey: import.meta.env.VITE_APP_SPOONACULAR_API_KEY,
                 }
             })
         }),

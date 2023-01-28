@@ -37,10 +37,11 @@ const Template = () => {
 						sx={{
 							display: "grid",
 							gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+							gap: "1rem",
 						}}
 					>
-						{templates?.map(template => (
-							<TemplateCard template={template} />
+						{templates?.map((template, index) => (
+							<TemplateCard template={template} key={index} />
 						))}
 					</Box>
 				</TabPanel>

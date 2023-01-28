@@ -1,4 +1,13 @@
-import { Card as MUICard, Checkbox, CardActions, CardContent, CardHeader, CardMedia, IconButton } from "@mui/material";
+import {
+	Card as MUICard,
+	Checkbox,
+	CardActions,
+	CardContent,
+	CardHeader,
+	CardMedia,
+	IconButton,
+	Box,
+} from "@mui/material";
 import { useGetProfileQuery, useUpdateProfileMutation } from "app/supabase/user";
 import useAuth from "hooks/useAuth";
 import { RecipeSearchItem } from "app/spoonacular/types";
@@ -43,6 +52,7 @@ const RecipeCard = ({ recipe }: { recipe: RecipeSearchItem }) => {
 			}}
 		>
 			<CardHeader title={recipe.title} />
+			<Box sx={{ display: "flex", flexGrow: 1 }} />
 			<CardMedia component="img" height="194" image={recipe.image} alt="recipe image" />
 			<CardContent />
 			<CardActions disableSpacing>

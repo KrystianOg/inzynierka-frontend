@@ -5,7 +5,6 @@ const supabaseApi = createApi({
     baseQuery: fakeBaseQuery(),
     tagTypes: ['Profile'],
     endpoints: (build) => ({
-
     })
 })
 

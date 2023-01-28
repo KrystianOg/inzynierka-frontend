@@ -10,7 +10,7 @@ import {
 	Box,
 } from "@mui/material";
 import { Template } from "types/templates";
-import { faAngleDown, faPenToSquare, faShare } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown, faPenToSquare, faShare, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useSnackbar } from "notistack";
 import { useNavigate } from "react-router-dom";
@@ -48,7 +48,7 @@ const TemplateCard = ({ template }: { template: Template }) => {
 	return (
 		<Card>
 			<CardHeader
-				title={template.name ?? template.id}
+				title={template.name === "" ? "Untitled" : template.name}
 				// subheader={template.name && template.id}
 			/>
 			<Collapse in={expanded} timeout="auto" unmountOnExit>
@@ -85,10 +85,13 @@ const TemplateCard = ({ template }: { template: Template }) => {
 			</Collapse>
 			<CardActions disableSpacing>
 				<IconButton aria-label="share">
-					<FontAwesomeIcon icon={faShare} />
+					<FontAwesomeIcon icon={faShare} size="sm" />
 				</IconButton>
 				<IconButton aria-label="edit">
-					<FontAwesomeIcon icon={faPenToSquare} />
+					<FontAwesomeIcon icon={faPenToSquare} size="sm" />
+				</IconButton>
+				<IconButton aria-label="delete">
+					<FontAwesomeIcon icon={faTrash} size="sm" />
 				</IconButton>
 				<ExpandMore
 					expand={expanded}
@@ -96,7 +99,7 @@ const TemplateCard = ({ template }: { template: Template }) => {
 					aria-expanded={expanded}
 					aria-label="show more"
 				>
-					<FontAwesomeIcon icon={faAngleDown} />
+					<FontAwesomeIcon icon={faAngleDown} size="sm" />
 				</ExpandMore>
 			</CardActions>
 		</Card>

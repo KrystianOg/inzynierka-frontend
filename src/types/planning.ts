@@ -1,4 +1,5 @@
-type Weekday = "monday" | "tuesday" | "wednesday" | "thursday" | "friday" | "saturday" | "sunday"
+export const weekday = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"] as const;
+type Weekday = typeof weekday[number];
 
 type Week ={
     [key in Weekday]: Day;
@@ -32,3 +33,7 @@ export type {
     NutrientsInfo,
     Weekday
 }
+
+// export { 
+//     Weekday
+// }

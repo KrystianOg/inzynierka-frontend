@@ -7,18 +7,18 @@ const userApi = supabaseApi.injectEndpoints({
         getProfile: build.query<Profile, string>({
             queryFn: async (id) => {
                 const { data, error } = await supabase.from('profiles').select().eq('id', id).single()
-                if (error) return { error: error.message }
-                
-                return { data }
+                return data
+                    ? { data }
+                    : { error }
             },
             providesTags: (_, error, id) => [{ type: 'Profile', id }]
         }),
-        updateProfile: build.mutation<void, Pick<UpdateProfile, 'id'> & Partial<UpdateProfile>>({
+        updateProfile: build.mutation<number, Pick<UpdateProfile, 'id'> & Partial<UpdateProfile>>({
             queryFn: async ({ id, ...patch}) => {
-                const { error } = await supabase.from('profiles').update(patch).eq('id', id)
-                if (error) return { error: error.message }
-                
-                return { data: undefined }
+                const { error, status } = await supabase.from('profiles').update(patch).eq('id', id)
+                return !error
+                    ? { data: status }
+                    : { error }
             },
             onQueryStarted({ id, ...patch}, { dispatch, queryFulfilled}) {
                 const patchResult = dispatch(

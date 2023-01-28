@@ -31,3 +31,8 @@ Add recipe table with some statistics
 Add search history
 Add search similar
 Add recipe page
+Add post sign up smth
+Add base onRegisterFunctionality & in future create EdgeFunctions
+
+### W inżynierce wzmianki o:
+- esm.sh 

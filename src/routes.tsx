@@ -10,8 +10,10 @@ import {
 	Plan,
 	InformationSetup,
 	Templates,
+	Template,
 	AddTemplate,
 } from "pages";
+
 import PrivateWrapper from "components/PrivateWrapper";
 
 export default () => {
@@ -29,6 +31,7 @@ export default () => {
 				<Route path="recipes" element={<Recipes />} />
 				<Route path="plan" element={<Plan />} />
 				<Route path="templates" element={<Templates />} />
+				<Route path="templates/:id" element={<Template />} /> // TODO: "AddTemplate
 				<Route path="templates/create" element={<AddTemplate />} />
 			</Route>
 

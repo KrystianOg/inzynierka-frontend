@@ -7,10 +7,9 @@ const templateApi = supabaseApi.injectEndpoints({
         getTemplates: build.query<Template[], void>({
             queryFn: async () => {
                 const { data, error } = await supabase.from('templates').select()
-
-                if (error) return { error: error.message }
-
-                return { data }
+                return data
+                    ? { data }
+                    : { error }
             }
         }),
         createTemplate: build.mutation<number, AddTemplate>({
@@ -18,28 +17,27 @@ const templateApi = supabaseApi.injectEndpoints({
                 const { error, status} = await supabase.from('templates').insert([
                     template
                 ])
-
-                if (error) return { error: error.message }
-
-                return { data: status}
+                return !error
+                    ? { data: status }
+                    : { error }
             }
         }),
         updateTemplate: build.mutation<number, Partial<Template> & { id: string }>({
             queryFn: async ({id, ...patch}) => {
                 const { error, status } = await supabase.from('templates').update(patch).eq('id', id)
 
-                if (error) return { error: error.message }
-
-                return { data: status }
+                return !error
+                    ? { data: status }
+                    : { error }
             }
         }),
         deleteTemplate: build.mutation<number, string>({
             queryFn: async (id) => {
                 const { error, status } = await supabase.from('templates').delete().eq('id', id)
 
-                if (error) return { error: error.message }
-
-                return { data: status }
+                return !error
+                    ? { data: status }
+                    : { error }
             }
         })
     })

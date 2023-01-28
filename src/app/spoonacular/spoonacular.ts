@@ -14,17 +14,8 @@ const baseQuery = fetchBaseQuery({
 export default createApi({
     reducerPath: 'spoonacular',
     baseQuery,
-    keepUnusedDataFor: 15*60,
+    keepUnusedDataFor: 30*60,
     refetchOnReconnect: true,
     tagTypes: [ 'MealPlan'],
-    endpoints: (build) => ({
-        connectUser: build.mutation<ConnectUserResponse, ConnectUserData>({
-            query: (body) => ({ 
-                method: 'POST',
-                url: '/users/connect',
-                body
-            }),
-        }),
-    }),
-    
+    endpoints: (build) => ({})
 })

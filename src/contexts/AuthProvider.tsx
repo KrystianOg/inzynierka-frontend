@@ -1,5 +1,5 @@
 import { User } from "@supabase/supabase-js";
-import React, { useContext, createContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import supabaseClient from "utils/supabaseClient";
 
 interface AuthProviderProps {
@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
 	useEffect(() => {
 		const getUser = async () => {
-			const { data, error } = await supabaseClient.auth.getUser();
+			const { data } = await supabaseClient.auth.getUser();
 
 			setUser(data.user);
 			setLoading(false);

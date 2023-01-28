@@ -9,7 +9,7 @@ import { Center } from "components";
 import { useGetProfileQuery } from "app/supabase/user";
 import useAuth from "hooks/useAuth";
 import { Workout } from "types/enum";
-import type { AddTemplate } from "types/templates";
+import type { AddTemplate as AddTemplateT } from "types/templates";
 import { useCreateTemplateMutation } from "app/supabase/templates";
 import { useEffect } from "react";
 
@@ -20,9 +20,9 @@ const AddTemplate = () => {
 	const { data: profile, isLoading } = useGetProfileQuery(user?.id!);
 	const [createTemplate, { isLoading: isCreating }] = useCreateTemplateMutation();
 
-	const { register, handleSubmit, setError } = useForm<AddTemplate>();
+	const { register, handleSubmit, setError } = useForm<AddTemplateT>();
 
-	const onSubmit: SubmitHandler<AddTemplate> = async newTemplate => {
+	const onSubmit: SubmitHandler<AddTemplateT> = async newTemplate => {
 		if (!user) return;
 
 		console.log(newTemplate);

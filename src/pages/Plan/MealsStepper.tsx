@@ -6,23 +6,30 @@ import { useStep } from "usehooks-ts";
 
 interface MealStepperProps {
 	day: Day;
-	name: string;
+	name?: string;
+	disabled?: boolean;
 }
 
 ///build on top of MUI Box
-const MealsStepper = ({ day, name }: MealStepperProps) => {
-	const [currentStep, helpers] = useStep(day.meals.length);
-
-	const { canGoToNextStep, canGoToPrevStep, goToNextStep, goToPrevStep, reset, setStep } = helpers;
+const MealsStepper = ({ day, disabled, name }: MealStepperProps) => {
+	const [currentStep, { canGoToNextStep, canGoToPrevStep, goToNextStep, goToPrevStep, reset, setStep }] = useStep(
+		day.meals.length
+	);
 
 	return (
-		<Box sx={{ maxWidth: 400 }} alignItems="center">
-			<Stepper activeStep={currentStep} orientation="vertical">
+		<Box
+			sx={{
+				pointerEvents: disabled ? "none" : "auto",
+				opacity: disabled ? 0.6 : 1,
+				maxWidth: 600,
+			}}
+		>
+			<Stepper activeStep={currentStep - 1} orientation="vertical">
 				{day.meals.map((step, index) => (
 					<Step key={step.id}>
 						<StepLabel
 							optional={
-								currentStep === day.meals.length - 1 && index === day.meals.length - 1 ? (
+								currentStep === day.meals.length && index === day.meals.length ? (
 									<Typography variant="caption">Last step</Typography>
 								) : null
 							}

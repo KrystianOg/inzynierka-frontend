@@ -96,7 +96,15 @@ const ProfilePage = () => {
 		<Layout>
 			<Helmet title="Profile | Diet Genius" />
 
-			<Center>
+			<Center
+				sx={{
+					flexDirection: "column",
+					margin: {
+						xs: "1.5rem",
+						sm: "2.5rem",
+					},
+				}}
+			>
 				<Badge
 					overlap="circular"
 					anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
@@ -104,14 +112,13 @@ const ProfilePage = () => {
 				>
 					<StyledAvatar />
 				</Badge>
-			</Center>
-			<Center>
-				<Typography component="h1" variant="body2" onClick={copyUsername}>
+				<Typography component="h1" variant="body2" onClick={copyUsername} mt=".5rem">
 					@{user?.email}
+					<IconButton aria-label="qr-code" sx={{ width: 20, height: 20 }} onClick={handleToggle}>
+						<FontAwesomeIcon icon={faQrcode} size="xs" />
+					</IconButton>
 				</Typography>
-				<IconButton aria-label="qr-code" sx={{ width: 20, height: 20 }} onClick={handleToggle}>
-					<FontAwesomeIcon icon={faQrcode} size="xs" />
-				</IconButton>
+
 				<Backdrop sx={{ zIndex: theme => theme.zIndex.drawer + 1 }} open={openQR} onClick={handleClose}>
 					<QRCode url="http://something.here/user?" />
 				</Backdrop>
@@ -141,6 +148,7 @@ const ProfilePage = () => {
 							}}
 							label={tab}
 							value={tab}
+							key={tab}
 						/>
 					))}
 				</TabList>
@@ -150,9 +158,8 @@ const ProfilePage = () => {
 					{/* some user settings */}
 					<TextField
 						select
-						label="Select Gender"
 						helperText="Gender"
-						value={profile?.gender ? "Male" : "Female"}
+						defaultValue={profile?.gender ? "Male" : "Female"}
 						onChange={e =>
 							setUpdateQuery({
 								...updateQuery,
@@ -177,7 +184,7 @@ const ProfilePage = () => {
 								min: 50,
 								max: 250,
 							}}
-							value={profile?.height}
+							defaultValue={profile?.height}
 							onChange={e =>
 								setUpdateQuery({
 									...updateQuery,
@@ -199,7 +206,7 @@ const ProfilePage = () => {
 								min: 50,
 								max: 150,
 							}}
-							value={profile?.weight}
+							defaultValue={profile?.weight}
 							onChange={e =>
 								setUpdateQuery({
 									...updateQuery,
@@ -213,10 +220,8 @@ const ProfilePage = () => {
 				<TabPanel value="preferences">
 					<TextField
 						select
-						label="Select"
-						defaultValue={3}
 						helperText="Daily meal count"
-						value={profile?.daily_meal_count}
+						defaultValue={profile?.daily_meal_count ?? 3}
 						onChange={e =>
 							setUpdateQuery({
 								...updateQuery,
@@ -232,9 +237,8 @@ const ProfilePage = () => {
 					</TextField>
 					<TextField
 						select
-						label="Select Workout"
 						helperText="Workout"
-						value={profile?.workout}
+						defaultValue={profile?.workout}
 						onChange={e =>
 							setUpdateQuery({
 								...updateQuery,
@@ -260,7 +264,7 @@ const ProfilePage = () => {
 								min: 0,
 								max: 5,
 							}}
-							value={profile?.water_consumption}
+							defaultValue={profile?.water_consumption}
 							onChange={e =>
 								setUpdateQuery({
 									...updateQuery,
@@ -282,7 +286,7 @@ const ProfilePage = () => {
 								maxLength: 3,
 								step: 5,
 							}}
-							value={profile?.max_ready_time}
+							defaultValue={profile?.max_ready_time}
 							onChange={e =>
 								setUpdateQuery({
 									...updateQuery,
@@ -306,7 +310,7 @@ const ProfilePage = () => {
 								max: 3000,
 								step: 25,
 							}}
-							value={profile?.min_calories}
+							defaultValue={profile?.min_calories}
 							onChange={e =>
 								setUpdateQuery({
 									...updateQuery,
@@ -327,7 +331,7 @@ const ProfilePage = () => {
 								max: 3000,
 								step: 25,
 							}}
-							value={profile?.max_calories}
+							defaultValue={profile?.max_calories}
 							onChange={e =>
 								setUpdateQuery({
 									...updateQuery,
@@ -347,7 +351,7 @@ const ProfilePage = () => {
 								min: 0,
 								max: 100,
 							}}
-							value={profile?.min_protein}
+							defaultValue={profile?.min_protein}
 							onChange={e =>
 								setUpdateQuery({
 									...updateQuery,
@@ -367,7 +371,7 @@ const ProfilePage = () => {
 								min: 0,
 								max: 100,
 							}}
-							value={profile?.max_protein}
+							defaultValue={profile?.max_protein}
 							onChange={e =>
 								setUpdateQuery({
 									...updateQuery,
@@ -387,7 +391,7 @@ const ProfilePage = () => {
 								min: 0,
 								max: 100,
 							}}
-							value={profile?.min_carbs}
+							defaultValue={profile?.min_carbs}
 							onChange={e =>
 								setUpdateQuery({
 									...updateQuery,
@@ -407,7 +411,7 @@ const ProfilePage = () => {
 								min: 0,
 								max: 100,
 							}}
-							value={profile?.max_carbs}
+							defaultValue={profile?.max_carbs}
 							onChange={e =>
 								setUpdateQuery({
 									...updateQuery,
@@ -426,10 +430,15 @@ const ProfilePage = () => {
 					}}
 				>
 					{/* spoonacular */}
-					<TextField label={t("profile.spoonacular.username")} disabled>
+					<TextField label={t("profile.spoonacular.username")} disabled defaultValue={"Tailowski"}>
 						{profile?.spoonacular_username}
 					</TextField>
-					<TextField label={t("profile.spoonacular.password")} disabled>
+					<TextField
+						label={t("profile.spoonacular.password")}
+						disabled
+						type="password"
+						defaultValue={"laskjdsdfsfdgsj"}
+					>
 						{profile?.spoonacular_password}
 					</TextField>
 				</TabPanel>
@@ -487,8 +496,8 @@ const ProfilePage = () => {
 						control={
 							<Switch
 								name="prefer_dark_mode"
+								// checked={profile?.prefer_dark_mode ?? isDarkMode ?? true}
 								checked={profile?.prefer_dark_mode ?? isDarkMode ?? true}
-								defaultChecked={profile?.prefer_dark_mode ?? isDarkMode ?? true}
 								onChange={e => {
 									setUpdateQuery({
 										...updateQuery,

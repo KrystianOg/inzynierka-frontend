@@ -2,14 +2,36 @@
 // https://deno.land/manual/getting_started/setup_your_environment
 // This enables autocomplete, go to definition, etc.
 
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
-import { createClient, SupabaseClient } from 'https://esm.sh/@supabase/supabase-js@2'
-import { corsHeaders } from '../_shared/cors.ts'
+import { serve } from 'https://deno.land/std@0.131.0/http/server.ts'
+// import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+import { corsHeaders, axios } from '../_shared/cors.ts'
 
-interface Recipe {
-  name: string,
-  status: number
+// interface Recipe {
+//   name: string,
+//   status: number
+// }
+
+const autoComplete = async (params: any) => {
+  return axios.get('/recipes/autocomplete',{
+    params: {
+      number: 10,
+      ...params
+    }
+  })
 }
+
+const searchRecipes = async (params: any) => {
+  return axios.get('/recipes/complexSearch',{
+    params: {
+      instructionsRequired: true,
+      ...params
+    }
+  })
+}
+
+// const getRecipeInformation = async (params: any, id: string) => {
+//   return axios.get(`/recipes/${id}/information`)
+// }
 
 serve(async (req) => {
   const { url, method } = req
@@ -18,6 +40,7 @@ serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response('ok', { headers: corsHeaders })
   }
+  
   try {
     // Create a Supabase client with the Auth context of the logged in user.
     const supabaseClient = createClient(
@@ -27,23 +50,32 @@ serve(async (req) => {
       Deno.env.get('SUPABASE_ANON_KEY') ?? '',
       // Create client with Auth context of the user that called the function.
       // This way your row-level-security (RLS) policies are applied.
-      { global: { headers: { Authorization: req.headers.get('Authorization')! } } }
-    )
+      { global: { 
+        headers: { 
+            // Authorization: req.headers.get('Authorization'),
+            "X-RapidAPI-Key": Deno.env.get('SPOONACULAR_API_KEY'),
+            "X-RapidAPI-Host": Deno.env.get('SPOONACULAR_API_HOST')
+          } 
+        } 
+      })
     
     // Fetch the recipes from the database.
-    const recipePattern = new URLPattern({ pathname: '/recipes/:id'})
-    const matchingPath = recipePattern.exec(url)
-    const id = matchingPath ? matchingPath.pathname.groups.id : null
+    const urlParts = url.split('/')
+    const [_, recipes, type]
+    
+
     
     let task = null
     if (["POST", "PUT"].includes(method)) {
       const body = await req.json();
-      task = body.task
+      task = body.task;
     }
 
-    switch(true) {
-      case method === 'GET' && id:
-        return getRecipe(supabaseClient, id as string)
+    switch(type) {
+      case method === 'GET' && type === 'autocomplete':
+        return autoComplete(req.params)
+      case method === 'GET' && type === 'complexSearch': 
+        return searchRecipes(req.params)
     }
   } catch (error) {
     console.log(error)

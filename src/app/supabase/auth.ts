@@ -2,39 +2,51 @@ import { SignInWithPasswordCredentials, SignInWithOAuthCredentials } from '@supa
 import supabaseApi from './supabase'
 import supabase from 'utils/supabaseClient'
 
+// import userApi from 'app/spoonacular/userApi'
+
 const authApi = supabaseApi.injectEndpoints({
     endpoints: (build) => ({
         signIn: build.query<void, SignInWithPasswordCredentials>({
             queryFn: async (data) => {
                 const { error } = await supabase.auth.signInWithPassword(data)
-                if (error) return { error: error.message }
-
-                return { data: undefined}
+                return error
+                    ? { error: error.message }
+                    : { data: undefined }
             },
+            
             
         }),
         signInWithOAuth: build.query<void, SignInWithOAuthCredentials>({
             queryFn: async (data) => {
                 const { error } = await supabase.auth.signInWithOAuth(data)
-                if (error) return { error }
+                
+                if (error) return { error: error.message }
+            //     const { data: {
+            //         user
+            //     }} = await supabase.auth.getUser()
+            //     const { data: {
+            //         spoonacular_username
+            //     } } = await supabase.from('profiles').select().eq('id', user?.id).single()
 
-                return { data: undefined }
+                return {
+                    data: undefined
+                }
             },
         }),
         signOut: build.query<void, void>({
             queryFn: async () => {
                 const { error } = await supabase.auth.signOut()
-                if (error) return { error: error.message }
-
-                return { data: undefined }
+                return error
+                    ? { error: error.message }
+                    : { data: undefined }
             }
         }),
         signUp: build.query<void, SignInWithPasswordCredentials>({
             queryFn: async (data)=> {
                 const { error } = await supabase.auth.signUp(data)
-                if (error) return { error: error.message }
-
-                return { data: undefined }
+                return error
+                    ? { error: error.message }
+                    : { data: undefined }
             }
         })
     })
