@@ -1,75 +1,139 @@
 {
     "info": {
-
+        "meal_planner": "DietGenius: Planowanie posiłków",
+        "nutrition_coach": "DietGenius: Trener żywieniowy"
     },
     "navigation": {
         "plan": "plan",
-        "calendar": "calendar",
-        "recipes": "recipes",
-        "profile": "profile",
-        "signout": "sign out",
-        "signin": "sign in",
-        "signup": "sign up",
-        "close": "close"
+        "templates": "szablony",
+        "recipes": "przepisy",
+        "profile": "profil",
+        "signout": "wyloguj się",
+        "signin": "zaloguj się",
+        "signup": "zarejestruj się",
+        "close": "zamknij"
     },
     "signin": {
-        "title": "sign in",
-        "email_address": "email address",
-        "email_required": "Email is required",
-        "password": "password",
-        "password_required": "Password is required",
-        "or": "or",
-        "with_google": "sign in with google",
-        "forgot_password": "forgot password?",
-        "no_account": "don't have an account? sign up"
+        "title": "zaloguj się",
+        "email_address": "adres e-mail",
+        "password": "hasło",
+        "or": "lub",
+        "with_google": "zaloguj się za pomocą google",
+        "forgot_password": "zapomniałeś hasła?",
+        "no_account": "nie masz konta? zarejestruj się"
     },
-    "setup_information": {
-
+    "signup": {
+        "title": "zarejestruj się",
+        "email_address": "adres e-mail",
+        "password": "hasło",
+        "already_a_member": "Już jesteś członkiem? Zaloguj się",
+        "error": {
+            "email_required": "Wymagany jest adres e-mail",
+            "password_required": "Wymagane jest hasło",
+            "invalid_email": "Nieprawidłowy adres e-mail",
+            "password_min_length": "Hasło musi mieć co najmniej 8 znaków",
+            "password_pattern": "Hasło musi zawierać co najmniej jedną wielką literę, jedną małą literę i jedną cyfrę",
+            "password_confirm": "Musisz potwierdzić hasło",
+            "password_do_not_match": "Hasła nie pasują"
+        }
+    },
+    "recipes": {
+        "search": "Wyszukaj przepisy"
+    },
+    "templates": {
+        "add_title": "Dodaj szablon",
+        "your_name": "Nazwa twojego szablonu",
+        "week": "tydzień",
+        "day": "dzień",
+        "create": "Utwórz szablon",
+            "card": {
+            "untitled": "bez tytułu",
+            "public": "publiczny",
+            "private": "prywatny"
+        }
+    },
+    "planner": {
+        "title": "Planner",
+        "generate_new_question": "Czy na pewno chcesz wygenerować nowy plan? Ta akcja nadpisze obecny plan?",
+        "yes": "TAK!",
+        "dismiss": "Anuluj",
+        "meal_stepper": {
+            "breakfast": "śniadanie",
+            "lunch": "lunch",
+            "dinner": "kolacja",
+            "last_step": "ostatni krok",
+            "finish": "zakończ",
+            "next": "dalej",
+            "back": "wstecz"
+        },
+            "card": {
+            "max_ready_time": "Czas gotowości w minutach:",
+            "servings": "Porcje:",
+            "navigate_to_recipe": "Przejdź do przepisu"
+        },
+        "error": {
+            "no_weekday": "Wymagany jest dzień tygodnia dla planu dnia"
+        }
     },
     "profile": {
         "email": {
-            "copied": "email copied to clipboard",
-            "copy_fail": "email copying failed"
+            "copied": "email skopiowany do schowka",
+            "copy_fail": "nie udało się skopiować email"
         },
-        "your_info": {
-            "title": "your info",
-            "height": "height",
-            "weight": "weight",
-            "age": "age",
-            "daily_meal_count":  "Daily meal count",
-            "water_consumption": "Water consumption",
-            "time_to_prepare": "Max time to prepare a meal"
+        "measurements": {
+            "title": "pomiary",
+            "height": "wzrost",
+            "weight": "waga",
+            "age": "wiek",
+            "gender": "płeć",
+            "gender_male": "Męższyzna",
+            "gender_female": "Kobieta"
+        },
+        "preferences": {
+            "workout": "trening",
+            "water_consumption": "Spożycie wody",
+            "max_ready_time": "Maksymalny czas przygotowania posiłku",
+            "daily_meal_count": "Liczba posiłków dziennie",
+            "minutes": "minut",
+            "litres": "l"
         },
         "min_max": {
             "title": "Min - Max",
-            "min_calories": "Min calories",
-            "max_calories": "Max calories",
-            "min_carbs": "Min carbs",
-            "max_carbs": "Max carbs"
+            "min_calories": "Min kalorii",
+            "max_calories": "Max kalorii",
+            "min_protein": "Min białka",
+            "max_protein": "Max białka",
+            "min_carbs": "Min węglowodanów",
+            "max_carbs": "Max węglowodanów"
         },
         "spoonacular": {
             "title": "Spoonacular",
-            "username":  "Spoonacular username",
-            "password": "Spoonacular password"
+            "username": "Nazwa użytkownika Spoonacular",
+            "password": "Hasło Spoonacular"
         },
-        "preferences": {
-            "title": "Preferences",
-            "dark_mode": "Prefer dark mode"
+        "settings": {
+            "title": "Ustawienia",
+            "dark_mode": "Preferowany tryb ciemny"
         },
         "notifications": {
-            "title": "Notifications",
-            "monthly_summary": "Monthly summary",
-            "weekly_summary": "Weekly summary",
-            "daily_reminder": "Daily reminder"
+            "title": "Powiadomienia",
+            "monthly_summary": "Podsumowanie miesięczne",
+            "weekly_summary": "Podsumowanie tygodniowe",
+            "daily_reminder": "Codzienne przypomnienie"
         }
     },
     "error": {
-        "an_error_occurred": "An error occurred",
-        "something_went_wrong": "Something went wrong",
-        "not_found": "Page not found",
-        "go_back": "Go back"
+        "an_error_occurred": "Wystąpił błąd",
+        "something_went_wrong": "Coś poszło nie tak",
+        "not_found": "Strona nie znaleziona",
+        "go_back": "Wróć",
+        "invalid_login_credentials": "Nieprawidłowe dane logowania",
+        "email_not_confirmed": "E-mail nie potwierdzony"
     },
-    "success": {
-        
+    "404": {
+        "title": "404",
+        "description": "Strona nie znaleziona",
+        "go_back": "Wróć"
     }
-}
+    
+}        

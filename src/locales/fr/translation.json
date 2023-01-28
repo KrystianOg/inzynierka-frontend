@@ -1,0 +1,134 @@
+{
+    "info": {
+        "meal_planner": "DietGenius: Planificateur de repas",
+        "nutrition_coach": "DietGenius: Coach en nutrition"
+    },
+    "navigation": {
+        "plan": "plan",
+        "templates": "modèles",
+        "recipes": "recettes",
+        "profile": "profil",
+        "signout": "se déconnecter",
+        "signin": "se connecter",
+        "signup": "s'inscrire",
+        "close": "fermer"
+    },
+    "signin": {
+        "title": "se connecter",
+        "email_address": "adresse email",
+        "password": "mot de passe",
+        "or": "ou",
+        "with_google": "se connecter avec google",
+        "forgot_password": "mot de passe oublié?",
+        "no_account": "pas de compte? s'inscrire"
+    },
+    "signup": {
+        "title": "s'inscrire",
+        "email_address": "adresse email",
+        "password": "mot de passe",
+        "already_a_member": "Déjà membre? Se connecter",
+        "error": {
+            "email_required": "L'email est requis",
+            "password_required": "Le mot de passe est requis",
+            "invalid_email": "Email non valide",
+            "password_min_length": "Le mot de passe doit contenir au moins 8 caractères",
+            "password_pattern": "Le mot de passe doit contenir au moins une lettre majuscule, une lettre minuscule et un chiffre",
+            "password_confirm": "Vous devez confirmer le mot de passe",
+            "password_do_not_match": "Les mots de passe ne correspondent pas"
+        }
+    },
+    "recipes": {
+        "search": "rechercher des recettes"
+    },
+    "templates": {
+        "add_title": "Ajouter un modèle",
+        "your_name": "Le nom de votre modèle",
+        "create": "Créer un modèle",
+        "card": {
+            "untitled": "sans titre",
+            "public": "public",
+            "private": "privé"
+        }
+    },
+    "planner": {
+        "title": "Planificateur",
+        "generate_new_question": "Voulez-vous vraiment générer un nouveau plan? Cette action remplacera le plan actuel?",
+        "yes": "OUI!",
+        "dismiss": "Annuler",
+        "meal_stepper": {
+            "breakfast": "petit déjeuner",
+            "lunch": "déjeuner",
+            "dinner": "dîner",
+            "last_step": "dernière étape",
+            "finish": "finir",
+            "next": "suivant",
+            "back": "retour"
+        },
+        "card": {
+            "max_ready_time": "Temps de préparation en minutes:",
+            "servings": "Portions:",
+            "navigate_to_recipe": "Aller à la recette"
+        },
+        "error": {
+            "no_weekday": "Un jour de la semaine est requis pour le plan de la journée"
+        }
+    },
+    "profile": {
+        "email": {
+            "copied": "email copié dans le presse-papiers",
+            "copy_fail": "échec de la copie de l'email"
+        },
+        "measurements": {
+            "title": "mesures"
+        },
+        "your_info": {
+            "title": "vos informations",
+            "height": "hauteur",
+            "weight": "poids",
+            "age": "âge",
+            "daily_meal_count": "Nombre de repas par jour",
+            "water_consumption": "Consommation d'eau",
+            "max_ready_time": "Temps de préparation maximum des repas"
+        },
+        "preferences": {
+            "workout": "entraînement"
+        },
+        "min_max": {
+            "title": "Min - Max",
+            "min_calories": "Min calories",
+            "max_calories": "Max calories",
+            "min_protein": "Min protéines",
+            "max_protein": "Max protéines",
+            "min_carbs": "Min glucides",
+            "max_carbs": "Max glucides"
+        },
+        "spoonacular": {
+            "title": "Spoonacular",
+            "username": "Nom d'utilisateur Spoonacular",
+            "password": "Mot de passe Spoonacular"
+        },
+        "settings": {
+            "title": "Réglages",
+            "dark_mode": "Mode sombre préféré"
+        },
+        "notifications": {
+            "title": "Notifications",
+            "monthly_summary": "Résumé mensuel",
+            "weekly_summary": "Résumé hebdomadaire",
+            "daily_reminder": "Rappel quotidien"
+        }
+    },
+    "error": {
+        "an_error_occurred": "Une erreur s'est produite",
+        "something_went_wrong": "Quelque chose s'est mal passé",
+        "not_found": "Page non trouvée",
+        "go_back": "Retour",
+        "invalid_login_credentials": "Informations d'identification non valides",
+        "email_not_confirmed": "Email non confirmé"
+    },
+    "404": {
+        "title": "404",
+        "description": "Page non trouvée",
+        "go_back": "Retour"
+    }
+}

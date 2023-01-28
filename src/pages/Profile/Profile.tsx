@@ -158,8 +158,12 @@ const ProfilePage = () => {
 					{/* some user settings */}
 					<TextField
 						select
-						helperText="Gender"
-						defaultValue={profile?.gender ? "Male" : "Female"}
+						helperText={t("profile.measurements.gender")}
+						defaultValue={
+							profile?.gender
+								? t("profile.measurements.gender_male")
+								: t("profile.measurements.gender_female")
+						}
 						onChange={e =>
 							setUpdateQuery({
 								...updateQuery,
@@ -168,11 +172,13 @@ const ProfilePage = () => {
 						}
 						fullWidth
 					>
-						{["Male", "Female"].map(option => (
-							<MenuItem key={option} value={option}>
-								{option}
-							</MenuItem>
-						))}
+						{[t("profile.measurements.gender_male"), t("profile.measurements.gender_female")].map(
+							option => (
+								<MenuItem key={option} value={option}>
+									{option}
+								</MenuItem>
+							)
+						)}
 					</TextField>
 					<FormControl variant="outlined">
 						<OutlinedInput
@@ -193,7 +199,7 @@ const ProfilePage = () => {
 							}
 						/>
 						<FormHelperText id="outlined-height-helper-text">
-							{t("profile.your_info.height")}
+							{t("profile.measurements.height")}
 						</FormHelperText>
 					</FormControl>
 					<FormControl variant="outlined">
@@ -214,13 +220,13 @@ const ProfilePage = () => {
 								})
 							}
 						/>
-						<FormHelperText>{t("profile.your_info.weight")}</FormHelperText>
+						<FormHelperText>{t("profile.measurements.weight")}</FormHelperText>
 					</FormControl>
 				</TabPanel>
 				<TabPanel value="preferences">
 					<TextField
 						select
-						helperText="Daily meal count"
+						helperText={t("profile.preferences.daily_meal_count")}
 						defaultValue={profile?.daily_meal_count ?? 3}
 						onChange={e =>
 							setUpdateQuery({
@@ -237,7 +243,7 @@ const ProfilePage = () => {
 					</TextField>
 					<TextField
 						select
-						helperText="Workout"
+						helperText={t("profile.preferences.workout")}
 						defaultValue={profile?.workout}
 						onChange={e =>
 							setUpdateQuery({
@@ -255,7 +261,9 @@ const ProfilePage = () => {
 					<FormControl>
 						<OutlinedInput
 							type="number"
-							endAdornment={<InputAdornment position="end">litres</InputAdornment>}
+							endAdornment={
+								<InputAdornment position="end">{t("profile.preferences.litres")}</InputAdornment>
+							}
 							aria-describedby="outlined-water-consumption-helper-text"
 							inputProps={{
 								"aria-label": "water-consumption",
@@ -272,12 +280,14 @@ const ProfilePage = () => {
 								})
 							}
 						/>
-						<FormHelperText>{t("profile.your_info.water_consumption")}</FormHelperText>
+						<FormHelperText>{t("profile.preferences.water_consumption")}</FormHelperText>
 					</FormControl>
 					<FormControl>
 						<OutlinedInput
 							type="number"
-							endAdornment={<InputAdornment position="end">minutes</InputAdornment>}
+							endAdornment={
+								<InputAdornment position="end">{t("profile.preferences.minutes")}</InputAdornment>
+							}
 							aria-describedby="outlined-time-to-prepare-helper-text"
 							inputProps={{
 								"aria-label": "time-to-prepare-a-meal",
@@ -294,7 +304,7 @@ const ProfilePage = () => {
 								})
 							}
 						/>
-						<FormHelperText>{t("profile.your_info.max_ready_time")}</FormHelperText>
+						<FormHelperText>{t("profile.preferences.max_ready_time")}</FormHelperText>
 					</FormControl>
 				</TabPanel>
 				<TabPanel value="nutrition">

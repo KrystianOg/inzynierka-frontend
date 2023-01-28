@@ -37,9 +37,6 @@
             "password_do_not_match": "Passwords do not match"
         }
     },
-    "setup_information": {
-
-    },
     "recipes": {
         "search": "search recipes"
     },
@@ -47,6 +44,8 @@
         "add_title": "Add Template",
         "your_name": "Your template's name",
         "create": "Create template",
+        "week": "week",
+        "day": "day",
         "card": {
             "untitled": "untitled",
             "public": "public",
@@ -82,19 +81,22 @@
             "copy_fail": "email copying failed"
         },
         "measurements": {
-            "title": "measurements"
-        },
-        "your_info": {
-            "title": "your info",
+            "title": "measurements",
             "height": "height",
             "weight": "weight",
             "age": "age",
-            "daily_meal_count":  "Daily meal count",
-            "water_consumption": "Water consumption",
-            "max_ready_time": "Max time to prepare a meal"
+
+            "gender": "Gender",
+            "gender_male": "Male",
+            "gender_female": "Female"
         },
         "preferences": {
-            "workout": "workout"
+            "workout": "workout",
+            "water_consumption": "Water consumption",
+            "max_ready_time": "Max time to prepare a meal",
+            "daily_meal_count":  "Daily meal count",
+            "minutes": "minutes",
+            "litres": "litres"
         },
         "min_max": {
             "title": "Min - Max",
@@ -133,8 +135,5 @@
         "title": "404",
         "description": "Page not found",
         "go_back": "Go back"
-    },
-    "success": {
-        
     }
 }
