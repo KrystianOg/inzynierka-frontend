@@ -1,7 +1,11 @@
 import { TabPanel, TabPanelProps } from "@mui/lab";
 import { Typography, styled, Avatar, TypographyProps, Box } from "@mui/material";
 
-export const ProfileSectionTitle = ({ text, sx }: { text: string } & TypographyProps) => (
+interface ProfileSectionTitleProps extends TypographyProps {
+	text: string;
+}
+
+export const ProfileSectionTitle = ({ text, sx }: ProfileSectionTitleProps) => (
 	<Typography
 		component="h2"
 		variant="h6"
@@ -30,7 +34,11 @@ export const StyledAvatar = styled(Avatar)(({ theme }) => ({
 	backgroundColor: theme.palette.secondary.dark,
 }));
 
-export const ProfileTabPanel = ({ children, value, sx }: { children: React.ReactNode } & TabPanelProps) => (
+interface ProfileTabPanelProps extends TabPanelProps {
+	children: React.ReactNode;
+}
+
+export const ProfileTabPanel = ({ children, value, sx }: ProfileTabPanelProps) => (
 	<TabPanel value={value}>
 		<Box
 			sx={{

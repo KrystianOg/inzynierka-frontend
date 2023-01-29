@@ -13,6 +13,8 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
 import { skipToken } from "@reduxjs/toolkit/dist/query";
 
+type GetRecipeQueryParams = RecipeSearchParams & Paginate;
+
 const Recipes = () => {
 	const { t } = useTranslation();
 	const queryRef = useRef<HTMLInputElement>(null);
@@ -22,7 +24,7 @@ const Recipes = () => {
 	const OFFSET = 36;
 	const [page, setPage] = useState(1);
 
-	const getRecipeQuery = (params?: Partial<RecipeSearchParams & Paginate>): RecipeSearchParams & Paginate => {
+	const getRecipeQuery = (params?: Partial<GetRecipeQueryParams>): GetRecipeQueryParams => {
 		return {
 			...removeEmpty<RecipeSearchParams>({
 				cuisine: profile?.cuisine,

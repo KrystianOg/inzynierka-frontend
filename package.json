@@ -9,7 +9,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "jest",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx,.vue --ignore-path .gitignore --fix src",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx,.vue --fix src",
     "format": "prettier . --write"
   },
   "dependencies": {

@@ -33,16 +33,11 @@ const TemplateCard = ({ template }: { template: Template }) => {
 	const { t } = useTranslation();
 	const [expanded, setExpanded] = useState(false);
 
-	const handleExpandClick = () => {
-		setExpanded(prev => !prev);
-	};
-
 	return (
 		<Card>
 			<CardHeader
 				sx={{ textTransform: "capitalize" }}
 				title={template.name === "" ? t("templates.card.untitled") : template.name}
-				// subheader={template.name && template.id}
 			/>
 			<Collapse in={expanded} timeout="auto" unmountOnExit>
 				<Box
@@ -52,7 +47,9 @@ const TemplateCard = ({ template }: { template: Template }) => {
 						padding: "0 1.5rem",
 					}}
 				>
-					<Typography paragraph>{template.public ? "public" : "private"}</Typography>
+					<Typography paragraph>
+						{template.public ? t("templates.card.public") : t("templates.card.private")}
+					</Typography>
 					<Typography paragraph>
 						{t("profile.preferences.workout")}: {template.workout}
 					</Typography>
@@ -92,7 +89,7 @@ const TemplateCard = ({ template }: { template: Template }) => {
 				</IconButton>
 				<ExpandMore
 					expand={expanded}
-					onClick={handleExpandClick}
+					onClick={() => setExpanded(prev => !prev)}
 					aria-expanded={expanded}
 					aria-label="show more"
 				>

@@ -31,8 +31,8 @@ const Template = () => {
 			<Helmet title="Template | Diet Genius" />
 			<TabContext value={tab}>
 				<TabList onChange={handleChange} variant="fullWidth" sx={{ borderBottom: 1, borderColor: "divider" }}>
-					<Tab label={t("profile.templates.week")} value="week" />
-					<Tab label={t("profile.templates.day")} value="day" />
+					<Tab label={t("templates.week")} value="week" />
+					<Tab label={t("templates.day")} value="day" />
 				</TabList>
 				<TabPanel value="week">
 					<Box

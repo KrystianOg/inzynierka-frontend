@@ -6,10 +6,12 @@ import { useTheme } from "@mui/material/styles";
 import { UseFormRegister } from "react-hook-form";
 import { AddTemplate } from "types/templates";
 
-const TextFieldInherit = ({
-	register,
-	...props
-}: TextFieldProps & { register: UseFormRegister<AddTemplate>; name: keyof AddTemplate }) => {
+type TextFieldInheritProps = TextFieldProps & {
+	register: UseFormRegister<AddTemplate>;
+	name: keyof AddTemplate;
+};
+
+const TextFieldInherit = ({ register, ...props }: TextFieldInheritProps) => {
 	const theme = useTheme();
 	const [disabled, setDisabled] = useState(true);
 

@@ -4,7 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faLock } from "@fortawesome/free-solid-svg-icons";
 import { useTheme } from "@mui/material/styles";
 
-const TextFieldInherit = ({ options, ...props }: TextFieldProps & { options?: string[] | number[] }) => {
+type TextFieldInheritProps = TextFieldProps & {
+	options?: string[] | number[];
+};
+
+const TextFieldInherit = ({ options, ...props }: TextFieldInheritProps) => {
 	const theme = useTheme();
 	const [disabled, setDisabled] = useState(true);
 

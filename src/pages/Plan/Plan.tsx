@@ -16,11 +16,12 @@ const week = weekPlan["week"] as unknown as Week;
 
 const Planner = () => {
 	const { t } = useTranslation();
-	const today = weekday[dayjs().day() - 1];
+	const today = weekday[dayjs().day() > 0 ? dayjs().day() - 1 : 6];
 	const [tab, setTab] = useState<Weekday>(today ?? "monday");
 	const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
-	const handleChange = (event: React.SyntheticEvent, newValue: Weekday) => {
+	const handleChange = (newValue: Weekday) => {
+		console.log(today);
 		setTab(newValue);
 	};
 
@@ -59,7 +60,7 @@ const Planner = () => {
 
 			<TabContext value={tab}>
 				<TabList
-					onChange={handleChange}
+					onChange={(_, newValue) => handleChange(newValue)}
 					variant="scrollable"
 					allowScrollButtonsMobile
 					sx={{

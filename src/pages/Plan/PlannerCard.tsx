@@ -29,8 +29,9 @@ const PlannerCard = ({ meal }: PlannerCardProps) => {
 				}}
 			>
 				<Typography>
-					{t("planner.card.max_ready_time")}
-					<span>{meal.readyInMinutes}</span>
+					{t("planner.card.max_ready_time", {
+						time: meal.readyInMinutes,
+					})}
 				</Typography>
 				<Typography>
 					{t("planner.card.servings")} <span>{meal.servings}</span>

@@ -67,7 +67,7 @@
             "back": "back"
         },
         "card": {
-            "max_ready_time": "Ready in minutes:",
+            "max_ready_time": "Ready in: {{time}} min",
             "servings": "Servings:",
             "navigate_to_recipe": "Navigate to recipe"
         },

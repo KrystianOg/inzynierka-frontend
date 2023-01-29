@@ -59,7 +59,7 @@
         "dismiss": "Anuluj",
         "meal_stepper": {
             "breakfast": "Śniadanie",
-            "lunch": ":Lunch",
+            "lunch": "Obiad",
             "dinner": "Kolacja",
             "last_step": "ostatni krok",
             "finish": "zakończ",
@@ -67,7 +67,7 @@
             "back": "wstecz"
         },
             "card": {
-            "max_ready_time": "Czas gotowości w minutach:",
+            "max_ready_time": "Czas przygotowania: {{time}} min",
             "servings": "Porcje:",
             "navigate_to_recipe": "Przejdź do przepisu"
         },
