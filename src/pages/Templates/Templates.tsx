@@ -17,6 +17,7 @@ const Template = () => {
 	const navigate = useNavigate();
 	const { data: templates } = useGetTemplatesQuery();
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const handleChange = (_: any, newValue: "week" | "day") => {
 		setTab(newValue);
 	};

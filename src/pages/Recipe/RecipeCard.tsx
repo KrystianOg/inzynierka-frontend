@@ -16,20 +16,23 @@ import { useSnackbar } from "notistack";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faShare } from "@fortawesome/free-solid-svg-icons";
 import { useTheme } from "@mui/material/styles";
+import { skipToken } from "@reduxjs/toolkit/dist/query";
 
 const RecipeCard = ({ recipe }: { recipe: RecipeSearchItem }) => {
 	const { user } = useAuth();
 	const [updateProfile] = useUpdateProfileMutation();
-	const { data: profile } = useGetProfileQuery(user?.id!);
+	const { data: profile } = useGetProfileQuery(user?.id ?? skipToken);
 	const { enqueueSnackbar } = useSnackbar();
 	const theme = useTheme();
 
 	const handleAddToFavorites = async () => {
+		if (!user) return;
+
 		if (!profile?.recipes?.includes(recipe?.id)) {
-			await updateProfile({ id: user?.id!, recipes: [...(profile?.recipes ?? []), recipe.id] });
+			await updateProfile({ id: user?.id, recipes: [...(profile?.recipes ?? []), recipe.id] });
 		} else {
 			await updateProfile({
-				id: user?.id!,
+				id: user?.id,
 				recipes: profile?.recipes?.filter(r => r !== recipe?.id),
 			});
 		}

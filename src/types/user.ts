@@ -1,7 +1,7 @@
 import { Workout, Intolerance, KitchenAppliance, DietaryRestriction } from './enum'
 
 interface Profile {
-    id: string, // as in uuid
+    id: string,
     age?: number,
     avatar?: string,
     created_at: string,

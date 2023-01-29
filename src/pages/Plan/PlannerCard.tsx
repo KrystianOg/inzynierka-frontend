@@ -3,11 +3,11 @@ import Card from "@mui/material/Card";
 import { useTranslation } from "react-i18next";
 import type { Meal } from "../../types/planning";
 
-type Props = {
+interface PlannerCardProps {
 	meal: Meal;
-};
+}
 
-const PlannerCard: React.FC<Props> = ({ meal }) => {
+const PlannerCard = ({ meal }: PlannerCardProps) => {
 	const { t } = useTranslation();
 	const navigateToRecipe = () => {
 		window.open(meal.sourceUrl, "_blank");

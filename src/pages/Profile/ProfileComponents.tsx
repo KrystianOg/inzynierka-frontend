@@ -10,6 +10,7 @@ export const ProfileSectionTitle = ({ text, sx }: { text: string } & TypographyP
 			marginTop: "auto",
 			marginBottom: 0,
 			gridColumn: "1 / -1",
+			...sx,
 		}}
 	>
 		{text}

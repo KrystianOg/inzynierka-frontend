@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import eslintPlugin from 'vite-plugin-eslint'
 import path from 'path'
 
 // https://vitejs.dev/config/
@@ -20,8 +21,5 @@ export default defineConfig({
       "static": path.resolve(__dirname, "./src/static"),
     }
   },
-  plugins: [react()],
-  server: {
-    port: 3000
-  },
+  plugins: [react(), eslintPlugin()]
 })

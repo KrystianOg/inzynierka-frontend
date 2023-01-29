@@ -4,28 +4,28 @@
         "nutrition_coach": "DietGenius: Trener żywieniowy"
     },
     "navigation": {
-        "plan": "plan",
-        "templates": "szablony",
-        "recipes": "przepisy",
-        "profile": "profil",
-        "signout": "wyloguj",
-        "signin": "logowanie",
-        "signup": "rejestracja",
-        "close": "zamknij"
+        "plan": "Plan",
+        "templates": "Szablony",
+        "recipes": "Przepisy",
+        "profile": "Profil",
+        "signout": "Wyloguj",
+        "signin": "Logowanie",
+        "signup": "Rejestracja",
+        "close": "Zamknij"
     },
     "signin": {
-        "title": "zaloguj",
-        "email_address": "adres e-mail",
-        "password": "hasło",
+        "title": "Zaloguj",
+        "email_address": "Adres e-mail",
+        "password": "Hasło",
         "or": "lub",
-        "with_google": "zaloguj za pomocą google",
-        "forgot_password": "zapomniałeś hasła?",
-        "no_account": "nie masz konta? zarejestruj się"
+        "with_google": "Zaloguj za pomocą google",
+        "forgot_password": "Zapomniałeś hasła?",
+        "no_account": "Nie masz konta? zarejestruj się"
     },
     "signup": {
-        "title": "rejestracja",
-        "email_address": "adres e-mail",
-        "password": "hasło",
+        "title": "Rejestracja",
+        "email_address": "Adres e-mail",
+        "password": "Hasło",
         "already_a_member": "Już jesteś członkiem? Zaloguj się",
         "error": {
             "email_required": "Wymagany jest adres e-mail",
@@ -43,13 +43,13 @@
     "templates": {
         "add_title": "Dodaj szablon",
         "your_name": "Nazwa twojego szablonu",
-        "week": "tydzień",
-        "day": "dzień",
+        "week": "Tydzień",
+        "day": "Dzień",
         "create": "Utwórz szablon",
             "card": {
-            "untitled": "bez tytułu",
-            "public": "publiczny",
-            "private": "prywatny"
+            "untitled": "Bez tytułu",
+            "public": "Publiczny",
+            "private": "Prywatny"
         }
     },
     "planner": {
@@ -58,9 +58,9 @@
         "yes": "TAK!",
         "dismiss": "Anuluj",
         "meal_stepper": {
-            "breakfast": "śniadanie",
-            "lunch": "lunch",
-            "dinner": "kolacja",
+            "breakfast": "Śniadanie",
+            "lunch": ":Lunch",
+            "dinner": "Kolacja",
             "last_step": "ostatni krok",
             "finish": "zakończ",
             "next": "dalej",
@@ -77,20 +77,20 @@
     },
     "profile": {
         "email": {
-            "copied": "email skopiowany do schowka",
-            "copy_fail": "nie udało się skopiować email"
+            "copied": "Email skopiowany do schowka",
+            "copy_fail": "Nie udało się skopiować email"
         },
         "measurements": {
-            "title": "pomiary",
-            "height": "wzrost",
-            "weight": "waga",
-            "age": "wiek",
-            "gender": "płeć",
+            "title": "Pomiary",
+            "height": "Wzrost",
+            "weight": "Waga",
+            "age": "Wiek",
+            "gender": "Płeć",
             "gender_male": "Męższyzna",
             "gender_female": "Kobieta"
         },
         "preferences": {
-            "workout": "trening",
+            "workout": "Trening",
             "water_consumption": "Spożycie wody",
             "max_ready_time": "Maksymalny czas przygotowania posiłku",
             "daily_meal_count": "Liczba posiłków dziennie",
@@ -104,7 +104,7 @@
             "min_protein": "Min białka",
             "max_protein": "Max białka",
             "min_carbs": "Min węglowodanów",
-            "max_carbs": "Max węglowodanów"
+            "max_carbs": "Max węglowodanów" 
         },
         "spoonacular": {
             "title": "Spoonacular",

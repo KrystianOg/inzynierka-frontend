@@ -1,4 +1,4 @@
-import { Box, Button, Slide, Step, StepContent, StepLabel, Stepper, Typography } from "@mui/material";
+import { Box, Button, Step, StepContent, StepLabel, Stepper, Typography } from "@mui/material";
 import FinishAnim from "./FinishAnim";
 import type { Day } from "types/planning";
 import PlannerCard from "./PlannerCard";
@@ -19,7 +19,7 @@ const MealsStepper = ({ day, disabled }: MealStepperProps) => {
 		t("planner.meal_stepper.dinner"),
 	]; // TODO: change that obviously
 
-	const [currentStep, { canGoToNextStep, canGoToPrevStep, goToNextStep, goToPrevStep, reset, setStep }] = useStep(
+	const [currentStep, { canGoToNextStep, canGoToPrevStep, goToNextStep, goToPrevStep }] = useStep(
 		day.meals.length + 1
 	);
 
@@ -32,8 +32,8 @@ const MealsStepper = ({ day, disabled }: MealStepperProps) => {
 			}}
 		>
 			<Stepper activeStep={currentStep - 1} orientation="vertical">
-				{day.meals.map((step, index) => (
-					<Step key={step.id}>
+				{day.meals.map((meal, index) => (
+					<Step key={meal.id}>
 						<StepLabel
 							sx={{ textTransform: "capitalize" }}
 							optional={
@@ -45,7 +45,7 @@ const MealsStepper = ({ day, disabled }: MealStepperProps) => {
 							{meals[index]}
 						</StepLabel>
 						<StepContent>
-							<PlannerCard meal={step} />
+							<PlannerCard meal={meal} />
 							<div>
 								<Button
 									variant="contained"

@@ -1,11 +1,6 @@
 import { Container, MobileStepper, Button, Box, Typography } from "@mui/material";
-import { Step1, Step2, Step3, Step4, Step5, Step6, Step7, Step8 } from "./Steps";
-import { useNavigate } from "react-router-dom";
+import { Step1, Step2, Step3 } from "./Steps";
 import { useStep } from "usehooks-ts";
-import { useEffect } from "react";
-import { Profile } from "types/user";
-import { useSnackbar } from "notistack";
-import { useUpdateProfileMutation } from "app/supabase/user";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
@@ -32,24 +27,18 @@ const steps: Step[] = [
 ];
 
 const InformationSetup = () => {
-	const navigate = useNavigate();
-	const { enqueueSnackbar } = useSnackbar();
-	const [updateProfile, { isLoading: isUpdating, error }] = useUpdateProfileMutation();
+	// const navigate = useNavigate();
+	// const [updateProfile] = useUpdateProfileMutation();
 
 	const [currentStep, helpers] = useStep(steps.length);
 
-	const { canGoToNextStep, canGoToPrevStep, goToNextStep, goToPrevStep, reset, setStep } = helpers;
+	const { goToNextStep, goToPrevStep } = helpers;
 
-	const updateUser = async (profile: Profile) => updateProfile(profile);
-
-	const handleNext = () => {
-		if (steps[currentStep].multiple) {
-		}
-	};
+	// const updateUser = async (profile: Profile) => updateProfile(profile);
 
 	return (
 		<Container>
-			<Box component="form" onSubmit={handleNext}>
+			<Box component="form" onSubmit={goToNextStep}>
 				<Typography component="h2" variant="h5">
 					{steps[currentStep].title}
 				</Typography>

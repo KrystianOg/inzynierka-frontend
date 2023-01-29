@@ -1,4 +1,4 @@
-import { Button, InputAdornment, TextField, Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 
 const buttons = [
 	"Little or none",

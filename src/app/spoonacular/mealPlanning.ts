@@ -1,5 +1,5 @@
 import spoonacularApi from './spoonacular'
-import { AddToMealPlan, GenerateMealPlanDayResponse, GenerateMealPlanWeekResponse, GetMealPlanWeekResponse } from 'types/spoonacular'
+import { GenerateMealPlanDayResponse, GenerateMealPlanWeekResponse, GetMealPlanWeekResponse } from 'types/spoonacular'
 
 interface GetMealPlanWeekData {
     username: string,
@@ -8,6 +8,7 @@ interface GetMealPlanWeekData {
 }
 
 interface GenerateMealPlanData {
+    timeFrame: "day" | "week",
     targetCalories?: number,
     diet?: string,
     exclude?: string[]
@@ -15,23 +16,11 @@ interface GenerateMealPlanData {
 
 spoonacularApi.injectEndpoints({
     endpoints: (build) => ({
-        generateMealPlanWeek: build.query<GenerateMealPlanWeekResponse, GenerateMealPlanData>({
+        generateMealPlan: build.query<GenerateMealPlanWeekResponse | GenerateMealPlanDayResponse, GenerateMealPlanData>({
             query: (params) => ({
                 url: `/mealplanner/generate`,
-                params: {
-                    ...params,
-                    timeFrame: "week"
-                }
+                params
             }),
-        }),
-        generateMealPlanDay: build.query<GenerateMealPlanDayResponse, GenerateMealPlanData>({
-            query: (params) => ({
-                url: `/mealplanner/generate`,
-                params: {
-                    ...params,
-                    timeFrame: "day"
-                }
-            })
         }),
         getMealPlanWeek: build.query<GetMealPlanWeekResponse, GetMealPlanWeekData>({
             query: ({username, start_date, hash}) => ({

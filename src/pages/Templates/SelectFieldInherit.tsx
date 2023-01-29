@@ -1,7 +1,7 @@
 import { InputAdornment, MenuItem, TextField, TextFieldProps } from "@mui/material";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPenToSquare, faLock, faRotateLeft } from "@fortawesome/free-solid-svg-icons";
+import { faPenToSquare, faLock } from "@fortawesome/free-solid-svg-icons";
 import { useTheme } from "@mui/material/styles";
 
 const TextFieldInherit = ({ options, ...props }: TextFieldProps & { options?: string[] | number[] }) => {

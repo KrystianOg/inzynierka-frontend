@@ -1,7 +1,7 @@
 import { InputAdornment, TextField, TextFieldProps } from "@mui/material";
-import { ChangeEvent, useRef, useState } from "react";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPenToSquare, faLock, faRotateLeft } from "@fortawesome/free-solid-svg-icons";
+import { faPenToSquare, faLock } from "@fortawesome/free-solid-svg-icons";
 import { useTheme } from "@mui/material/styles";
 import { UseFormRegister } from "react-hook-form";
 import { AddTemplate } from "types/templates";
@@ -9,7 +9,7 @@ import { AddTemplate } from "types/templates";
 const TextFieldInherit = ({
 	register,
 	...props
-}: TextFieldProps & { register?: UseFormRegister<AddTemplate>; name: keyof AddTemplate }) => {
+}: TextFieldProps & { register: UseFormRegister<AddTemplate>; name: keyof AddTemplate }) => {
 	const theme = useTheme();
 	const [disabled, setDisabled] = useState(true);
 
@@ -44,7 +44,7 @@ const TextFieldInherit = ({
 				min: 0,
 				...props.inputProps,
 			}}
-			{...register!(props.name, {
+			{...register(props.name, {
 				required: props.required,
 			})}
 		/>

@@ -12,8 +12,6 @@ import {
 import { Template } from "types/templates";
 import { faAngleDown, faPenToSquare, faShare, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useSnackbar } from "notistack";
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -21,8 +19,7 @@ interface ExpandMoreProps extends IconButtonProps {
 	expand: boolean;
 }
 
-const ExpandMore = styled((props: ExpandMoreProps) => {
-	const { expand, ...other } = props;
+const ExpandMore = styled(({ ...other }: ExpandMoreProps) => {
 	return <IconButton {...other} />;
 })(({ theme, expand }) => ({
 	transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
@@ -34,14 +31,7 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 
 const TemplateCard = ({ template }: { template: Template }) => {
 	const { t } = useTranslation();
-	const { enqueueSnackbar } = useSnackbar();
-	const navigate = useNavigate();
 	const [expanded, setExpanded] = useState(false);
-
-	const handleCopy = () => {
-		navigator.clipboard.writeText(`Search ${template.id}`);
-		enqueueSnackbar("Copied to clipboard", { variant: "success" });
-	};
 
 	const handleExpandClick = () => {
 		setExpanded(prev => !prev);

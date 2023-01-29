@@ -1,4 +1,4 @@
-import type { Template, DayTemplate } from 'types/templates'
+import type { Template } from 'types/templates'
 import { Profile } from 'types/user'
 import { Workout } from 'types/enum'
 
@@ -7,7 +7,7 @@ interface BMRProps {
     profile: Profile
 }
 
-export const calculateBMR = ({template, profile}: BMRProps): number => {
+export const calculateBMR = ({ profile }: BMRProps): number => {
 
     if (profile.gender === undefined) throw new Error("Gender is required")
     if (!profile.age) throw new Error("Age is required")
@@ -15,11 +15,11 @@ export const calculateBMR = ({template, profile}: BMRProps): number => {
     if (!profile.height) throw new Error("Height is required")
 
     if (profile.gender) {
-        return 66 + (13.7 * profile.weight!) + (5 * profile.height!) - (6.8 * profile.age!)
+        return 66 + (13.7 * profile.weight) + (5 * profile.height) - (6.8 * profile.age)
     }
 
     if (!profile.gender){
-        return 655 + (9.6 * profile.weight!) + (1.8 * profile.height!) - (4.7 * profile.age!)
+        return 655 + (9.6 * profile.weight) + (1.8 * profile.height) - (4.7 * profile.age)
     }
     
     throw new Error("Some error occurred.")

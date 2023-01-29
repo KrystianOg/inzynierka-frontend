@@ -14,18 +14,18 @@
         "close": "close"
     },
     "signin": {
-        "title": "sign in",
-        "email_address": "email address",
-        "password": "password",
+        "title": "Sign in",
+        "email_address": "Email address",
+        "password": "Password",
         "or": "or",
-        "with_google": "sign in with google",
-        "forgot_password": "forgot password?",
-        "no_account": "don't have an account? sign up"
+        "with_google": "Sign in with google",
+        "forgot_password": "Forgot password?",
+        "no_account": "Don't have an account? sign up"
     },
     "signup": {
-        "title": "sign up",
-        "email_address": "email address",
-        "password": "password",
+        "title": "Sign up",
+        "email_address": "Email address",
+        "password": "Password",
         "already_a_member": "Already a member? Sign in",
         "error": {
             "email_required": "Email is required",
@@ -38,7 +38,7 @@
         }
     },
     "recipes": {
-        "search": "search recipes"
+        "search": "Search recipes"
     },
     "templates": {
         "add_title": "Add Template",
@@ -47,7 +47,7 @@
         "week": "week",
         "day": "day",
         "card": {
-            "untitled": "untitled",
+            "untitled": "Untitled",
             "public": "public",
             "private": "private"
         }
@@ -58,9 +58,9 @@
         "yes": "YES!",
         "dismiss": "Dismiss",
         "meal_stepper": {
-            "breakfast": "breakfast",
-            "lunch": "lunch",
-            "dinner": "dinner",
+            "breakfast": "Breakfast",
+            "lunch": "Lunch",
+            "dinner": "Dinner",
             "last_step": "last step",
             "finish": "finish",
             "next": "next",
@@ -85,7 +85,6 @@
             "height": "height",
             "weight": "weight",
             "age": "age",
-
             "gender": "Gender",
             "gender_male": "Male",
             "gender_female": "Female"

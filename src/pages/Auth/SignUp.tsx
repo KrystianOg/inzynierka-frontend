@@ -1,4 +1,4 @@
-import { Box, Typography, Container, Grid, Avatar, IconButton, CircularProgress, Link } from "@mui/material";
+import { Box, Typography, Container, Avatar, IconButton, CircularProgress, Link } from "@mui/material";
 import { Helmet } from "react-helmet-async";
 import { TextField, Button } from "components/Rounded";
 import { SignUpCredentials } from "types/auth";
@@ -22,7 +22,6 @@ const SignUp = () => {
 		formState: { errors },
 		watch,
 		handleSubmit,
-		setError,
 	} = useForm<SignUpCredentials>();
 
 	const [signUp, { isFetching, error }] = useLazySignUpQuery();

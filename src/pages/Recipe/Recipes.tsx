@@ -1,5 +1,4 @@
 import { TextField, Grid, Pagination, Skeleton } from "@mui/material";
-import Masonry from "@mui/lab/Masonry";
 import { BottomNav, Center } from "components";
 import { useSearchRecipesQuery, usePrefetch } from "app/spoonacular/recipesApi";
 import { useCallback, useRef, useState } from "react";
@@ -7,25 +6,22 @@ import { useGetProfileQuery } from "app/supabase/user";
 import useAuth from "hooks/useAuth";
 import { Paginate, RecipeSearchParams } from "app/spoonacular/types";
 import removeEmpty from "utils/removeEmpty";
-
-//TODO remove static
-// import search_recipes from "static/search_recipes.json";
 import RecipeCard from "./RecipeCard";
 import { Helmet } from "react-helmet-async";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
+import { skipToken } from "@reduxjs/toolkit/dist/query";
 
 const Recipes = () => {
 	const { t } = useTranslation();
 	const queryRef = useRef<HTMLInputElement>(null);
 	const { user } = useAuth();
-	const { data: profile } = useGetProfileQuery(user?.id!);
+	const { data: profile } = useGetProfileQuery(user?.id ?? skipToken);
 	const prefetchRecipes = usePrefetch("searchRecipes");
 	const OFFSET = 36;
 	const [page, setPage] = useState(1);
 
-	//TODO handle fetching & loading states
 	const getRecipeQuery = (params?: Partial<RecipeSearchParams & Paginate>): RecipeSearchParams & Paginate => {
 		return {
 			...removeEmpty<RecipeSearchParams>({
@@ -50,7 +46,6 @@ const Recipes = () => {
 	};
 
 	const { data: recipes, refetch, isFetching, isLoading } = useSearchRecipesQuery(getRecipeQuery());
-	// const recipes = search_recipes as RecipeSearchItem[];
 
 	const prefetchNextPage = useCallback(
 		(page: number) => {

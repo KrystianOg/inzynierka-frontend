@@ -11,13 +11,14 @@ import { Workout } from "types/enum";
 import type { AddTemplate as AddTemplateT } from "types/templates";
 import { useCreateTemplateMutation } from "app/supabase/templates";
 import { useTranslation } from "react-i18next";
+import { skipToken } from "@reduxjs/toolkit/dist/query";
 
 const AddTemplate = () => {
 	const { t } = useTranslation();
 	const { type } = useParams<{ type: string }>();
 	const navigate = useNavigate();
 	const { user } = useAuth();
-	const { data: profile, isLoading } = useGetProfileQuery(user?.id!);
+	const { data: profile, isLoading } = useGetProfileQuery(user?.id ?? skipToken);
 	const [createTemplate, { isLoading: isCreating }] = useCreateTemplateMutation();
 
 	const { register, handleSubmit, setError } = useForm<AddTemplateT>();

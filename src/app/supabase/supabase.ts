@@ -1,11 +1,9 @@
 import { createApi, fakeBaseQuery } from '@reduxjs/toolkit/query/react'
 
-const supabaseApi = createApi({
+export default createApi({
     reducerPath: 'supabase',
     baseQuery: fakeBaseQuery(),
     tagTypes: ['Profile'],
-    endpoints: (build) => ({
-    })
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    endpoints: (_) => ({})
 })
-
-export default supabaseApi

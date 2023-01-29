@@ -21,6 +21,8 @@ const LinkBehavior = React.forwardRef<
 	}
 );
 
+LinkBehavior.displayName = "LinkBehavior";
+
 // prettier-ignore
 const getDesignTokens = (mode: "light" | "dark") => ({
 	palette: {

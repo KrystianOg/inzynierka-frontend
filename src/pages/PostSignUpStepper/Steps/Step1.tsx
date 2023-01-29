@@ -1,4 +1,4 @@
-import { Button, Checkbox, FormControlLabel, Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { Gender } from "types/enum";
 
 const Step1 = () => {

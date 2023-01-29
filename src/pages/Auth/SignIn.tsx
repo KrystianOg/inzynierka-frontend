@@ -18,14 +18,13 @@ const SignIn = () => {
 	const from = location.state?.from?.pathname || "/";
 	const { enqueueSnackbar } = useSnackbar();
 
-	const [signIn, result] = useLazySignInQuery();
-	const [signInWithOAuth, { error: oAuthError }] = useLazySignInWithOAuthQuery();
+	const [signIn, { isLoading }] = useLazySignInQuery();
+	const [signInWithOAuth] = useLazySignInWithOAuthQuery();
 
 	const {
 		register,
 		formState: { errors },
 		handleSubmit,
-		setError,
 	} = useForm<SignInCredentials>();
 
 	const handleSignIn: SubmitHandler<SignInCredentials> = async credentials => {
@@ -122,7 +121,7 @@ const SignIn = () => {
 					sx={{ marginTop: "3rem" }}
 					onClick={() => navigate(from, { replace: true })}
 				>
-					{false ? <CircularProgress /> : <FontAwesomeIcon icon={faTimes} />}
+					{isLoading ? <CircularProgress /> : <FontAwesomeIcon icon={faTimes} />}
 				</IconButton>
 			</Box>
 		</Container>

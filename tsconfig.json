@@ -6,8 +6,6 @@
       "DOM",
       "DOM.Iterable",
       "ESNext",
-      "es5",
-      "es6",
     ],
     "allowJs": false,
     "skipLibCheck": true,

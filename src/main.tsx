@@ -1,7 +1,7 @@
 import App from "./App";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "styles/index.scss";
+import "./index.css";
 
 // import { disableReactDevTools } from "@fvilers/disable-react-devtools";
 import "./i18n";
@@ -11,7 +11,7 @@ import { BrowserRouter } from "react-router-dom";
 import { useChainProviders } from "react-flat-providers";
 import { HelmetProvider } from "react-helmet-async";
 import { Provider as ReduxProvider } from "react-redux";
-import { store } from "./app/store";
+import { store } from "app/store";
 import ThemeProvider from "contexts/ThemeProvider";
 import LocalizationProvider from "contexts/LocalizationProvider";
 import { SnackbarProvider } from "notistack";

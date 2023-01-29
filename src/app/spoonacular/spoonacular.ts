@@ -1,5 +1,4 @@
 import { fetchBaseQuery, createApi} from '@reduxjs/toolkit/query/react'
-import { ConnectUserData, ConnectUserResponse } from 'types/spoonacular'
 
 const baseQuery = fetchBaseQuery({
     baseUrl: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
@@ -14,8 +13,7 @@ const baseQuery = fetchBaseQuery({
 export default createApi({
     reducerPath: 'spoonacular',
     baseQuery,
-    keepUnusedDataFor: 30*60,
+    keepUnusedDataFor: 60*60,
     refetchOnReconnect: true,
-    tagTypes: [ 'MealPlan'],
-    endpoints: (build) => ({})
+    endpoints: () => ({})
 })

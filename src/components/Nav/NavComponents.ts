@@ -66,7 +66,7 @@ export const Fib = styled(MIconButton)(({ theme }) => ({
 	color: theme.palette.primary.main,
 }))
 
-export const Drawer = styled(MDrawer)(({ theme }) => ({
+export const Drawer = styled(MDrawer)(() => ({
 	"& .MuiDrawer-paper": {
 		boxSizing: "border-box",
 		width: "100vw",

@@ -13,7 +13,6 @@ const PrivateWrapper = () => {
 				<Outlet />
 			</Container>
 			{/* <Footer /> */}
-
 			<BottomNav />
 		</>
 	) : (

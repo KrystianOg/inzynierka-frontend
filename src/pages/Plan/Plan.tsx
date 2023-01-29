@@ -1,10 +1,8 @@
 import { useState } from "react";
 import { BottomNav, Fab } from "components";
-import { Tabs, Tab, Box, Button } from "@mui/material";
-// import MealsStepper from "./MealsStepper";
-// import Card from "./PlannerCard";
+import { Tab, Box, Button } from "@mui/material";
 import { type Week, type Weekday, weekday } from "types/planning";
-import dayjs, { Dayjs } from "dayjs";
+import dayjs from "dayjs";
 import weekPlan from "static/week-plan.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRotateRight } from "@fortawesome/free-solid-svg-icons";

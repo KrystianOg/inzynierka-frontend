@@ -19,7 +19,7 @@ const DesktopNav = () => {
 	const navigate = useNavigate();
 	const location = useLocation();
 	const { isSession } = useAuth();
-	const [signOut, { isFetching }] = useLazySignOutQuery();
+	const [signOut] = useLazySignOutQuery();
 	const { enqueueSnackbar } = useSnackbar();
 	const { isDarkMode } = useDarkMode();
 

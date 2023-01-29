@@ -14,7 +14,6 @@ import {
 	FormControlLabel,
 	Switch,
 	Tab,
-	Box,
 } from "@mui/material";
 import { TabContext, TabList } from "@mui/lab";
 
@@ -32,6 +31,7 @@ import { Center } from "components";
 import { Helmet } from "react-helmet-async";
 import { Workout } from "types/enum";
 import { SmallAvatar, StyledAvatar, ProfileTabPanel as TabPanel } from "./ProfileComponents";
+import { skipToken } from "@reduxjs/toolkit/dist/query";
 
 enum TabName {
 	Measurements = "measurements",
@@ -50,18 +50,20 @@ const ProfilePage = () => {
 	const handleClose = () => setOpenQR(false);
 	const handleToggle = () => setOpenQR(prev => !prev);
 	const { user } = useAuth();
-	const { data: profile } = useGetProfileQuery(user?.id!);
+	const { data: profile } = useGetProfileQuery(user?.id ?? skipToken);
 	const [updateQuery, setUpdateQuery] = useState<Partial<UpdateProfile>>();
 	const [updateProfile, { isError, isSuccess }] = useUpdateProfileMutation();
 	const [tab, setTab] = useState<TabName>(TabName.Measurements);
 
-	const handleTabChange = (_: any, newValue: TabName) => {
+	const handleTabChange = (newValue: TabName) => {
 		setTab(newValue);
 	};
 
 	useEffect(() => {
 		const update = async () => {
-			await updateProfile({ id: user?.id!, ...updateQuery });
+			if (!user) return;
+
+			await updateProfile({ id: user?.id, ...updateQuery });
 
 			if (isError) {
 				enqueueSnackbar(t("error.an_error_occurred"), {
@@ -78,8 +80,10 @@ const ProfilePage = () => {
 	}, [updateQuery]);
 
 	const copyUsername = () => {
+		if (!user) return;
+
 		try {
-			navigator.clipboard.writeText(user?.email!);
+			navigator.clipboard.writeText(user?.email ?? user.id);
 
 			enqueueSnackbar(t("profile.email.copied"), {
 				variant: "success",
@@ -133,7 +137,7 @@ const ProfilePage = () => {
 
 			<TabContext value={tab}>
 				<TabList
-					onChange={handleTabChange}
+					onChange={(_, newPage) => handleTabChange(newPage)}
 					variant="scrollable"
 					allowScrollButtonsMobile
 					sx={{
