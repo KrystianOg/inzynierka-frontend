@@ -1,0 +1,1 @@
+import{u as o,b as n,L as r}from"./index-9cd92da0.js";import"./browser-ponyfill-f1f1b475.js";const e=()=>{const{t}=o();return n(r,{href:"/setup-information",children:t("button")})};export{e as default};
