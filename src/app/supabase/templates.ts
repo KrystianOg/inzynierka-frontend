@@ -29,7 +29,19 @@ const templateApi = supabaseApi.injectEndpoints({
                 return !error
                     ? { data: status }
                     : { error }
-            }
+            },
+            onQueryStarted({ id, ...patch}, { dispatch, queryFulfilled}) {
+                const patchResult = dispatch(
+                    templateApi.util.updateQueryData('getTemplates', undefined, (draft) => {
+                        const index = draft.findIndex((template) => template.id === id)
+                        if (index !== -1) {
+                            Object.assign(draft[index], patch)
+                        }
+                    })
+                )
+                queryFulfilled.catch(patchResult.undo)
+            },
+            invalidatesTags: ['Template']
         }),
         deleteTemplate: build.mutation<number, string>({
             queryFn: async (id) => {
@@ -38,7 +50,19 @@ const templateApi = supabaseApi.injectEndpoints({
                 return !error
                     ? { data: status }
                     : { error }
-            }
+            },
+            onQueryStarted(id, { dispatch, queryFulfilled}) {
+                const patchResult = dispatch(
+                    templateApi.util.updateQueryData('getTemplates', undefined, (draft) => {
+                        const index = draft.findIndex((template) => template.id === id)
+                        if (index !== -1) {
+                            draft.splice(index, 1)
+                        }
+                    })
+                )
+                queryFulfilled.catch(patchResult.undo)
+            },
+            invalidatesTags: ['Template']
         })
     })
 })

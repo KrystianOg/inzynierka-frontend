@@ -25,8 +25,6 @@ const userApi = spoonacular.injectEndpoints({
     })
 })
 
-export default userApi
-
 export const {
     useConnectUserMutation,
 } = userApi

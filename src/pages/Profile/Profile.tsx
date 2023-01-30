@@ -150,7 +150,7 @@ const ProfilePage = () => {
 							sx={{
 								textTransform: "capitalize",
 							}}
-							label={tab}
+							label={t(`profile.tabs.${tab}`)}
 							value={tab}
 							key={tab}
 						/>

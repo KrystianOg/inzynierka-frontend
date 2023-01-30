@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BottomNav, Fab } from "components";
-import { Tab, Box, Button } from "@mui/material";
+import { Tab, Box, Button, Tooltip } from "@mui/material";
 import { type Week, type Weekday, weekday } from "types/planning";
 import dayjs from "dayjs";
 import weekPlan from "static/week-plan.json";
@@ -25,7 +25,7 @@ const Planner = () => {
 		setTab(newValue);
 	};
 
-	const generateDayPlan = (type: "week" | "day", weekday?: Weekday) => {
+	const generateDayPlan = (type: "week" | "day", weekday?: Weekday) => () => {
 		if (type === "day" && !weekday) {
 			throw new Error(t("planner.error.no_weekday").toString());
 		}
@@ -91,18 +91,18 @@ const Planner = () => {
 				})}
 			</TabContext>
 
-			<Fab
-				sx={{ bottom: 72, top: "auto", ariaLabel: "Generate Day Plan" }}
-				onClick={() => generateDayPlan("week")}
-			>
-				<FontAwesomeIcon
-					icon={faRotateRight}
-					style={{
-						width: "32px",
-						height: "32px",
-					}}
-				/>
-			</Fab>
+			<Tooltip title={t("planner.generate_tooltip")}>
+				<Fab sx={{ bottom: 72, top: "auto", ariaLabel: "Generate Day Plan" }} onClick={generateDayPlan("week")}>
+					<FontAwesomeIcon
+						icon={faRotateRight}
+						style={{
+							width: "32px",
+							height: "32px",
+						}}
+					/>
+				</Fab>
+			</Tooltip>
+
 			<BottomNav />
 		</>
 	);

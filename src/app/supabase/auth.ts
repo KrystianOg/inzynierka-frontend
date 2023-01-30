@@ -21,12 +21,6 @@ const authApi = supabaseApi.injectEndpoints({
                 const { error } = await supabase.auth.signInWithOAuth(data)
                 
                 if (error) return { error: error.message }
-            //     const { data: {
-            //         user
-            //     }} = await supabase.auth.getUser()
-            //     const { data: {
-            //         spoonacular_username
-            //     } } = await supabase.from('profiles').select().eq('id', user?.id).single()
 
                 return {
                     data: undefined

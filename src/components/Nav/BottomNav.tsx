@@ -26,6 +26,9 @@ const BottomNav = () => {
 	const navigate = useNavigate();
 	const theme = useTheme();
 	const { isDarkMode } = useDarkMode();
+
+	const handleNavigate = (to: string) => () => navigate(to);
+
 	return (
 		<StickBottomNavigation
 			sx={{
@@ -36,26 +39,26 @@ const BottomNav = () => {
 			<StyledBottomNA
 				aria-label="Plan"
 				icon={<FAIcon icon={faCarrot} color={theme.palette.primary.main} />}
-				onClick={() => navigate("/plan")}
+				onClick={handleNavigate("/plan")}
 			/>
 			<StyledBottomNA
 				label={t("navigation.templates")}
 				value="templates"
 				icon={<FAIcon icon={faCalendar} color={theme.palette.primary.main} />}
-				onClick={() => navigate("/templates")}
+				onClick={handleNavigate("/templates")}
 			/>
 			<StyledBottomNA
 				label={t("navigation.recipes")}
 				value="recipes"
 				icon={<FAIcon icon={faBookOpen} color={theme.palette.primary.main} />}
-				onClick={() => navigate("/recipes")}
+				onClick={handleNavigate("/recipes")}
 			/>
 			{/* TODO: on login set avatar */}
 			<StyledBottomNA
 				label={t("navigation.profile")}
 				value="profile"
 				icon={<FAIcon icon={faUser} color={theme.palette.primary.main} />}
-				onClick={() => navigate("/profile")}
+				onClick={handleNavigate("/profile")}
 			/>
 		</StickBottomNavigation>
 	);

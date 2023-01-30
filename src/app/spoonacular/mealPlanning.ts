@@ -14,7 +14,7 @@ interface GenerateMealPlanData {
     exclude?: string[]
 }
 
-spoonacularApi.injectEndpoints({
+const mealPlanningApi = spoonacularApi.injectEndpoints({
     endpoints: (build) => ({
         generateMealPlan: build.query<GenerateMealPlanWeekResponse | GenerateMealPlanDayResponse, GenerateMealPlanData>({
             query: (params) => ({
@@ -32,3 +32,8 @@ spoonacularApi.injectEndpoints({
         }),
     })
 })
+
+export const {
+    useGenerateMealPlanQuery,
+    useGetMealPlanWeekQuery,
+} = mealPlanningApi

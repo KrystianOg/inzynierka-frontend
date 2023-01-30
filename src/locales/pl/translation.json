@@ -55,6 +55,7 @@
     "planner": {
         "title": "Planner",
         "generate_new_question": "Czy na pewno chcesz wygenerować nowy plan? Ta akcja nadpisze obecny plan?",
+        "generate_tooltip": "Wygeneruj ponownie",
         "yes": "TAK!",
         "dismiss": "Anuluj",
         "meal_stepper": {
@@ -76,6 +77,14 @@
         }
     },
     "profile": {
+        "tabs": {
+            "measurements": "Wymiary",
+            "preferences": "Preferencje",
+            "nutrition": "Żywienie",
+            "spoonacular": "Spoonacular",
+            "notifications": "Powiadomienia",
+            "settings": "Aplikacja"
+        },
         "email": {
             "copied": "Email skopiowany do schowka",
             "copy_fail": "Nie udało się skopiować email"

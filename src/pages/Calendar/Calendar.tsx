@@ -28,11 +28,13 @@ const Calendar = () => {
 	// 	});
 	// };
 
+	const handleSetDate = () => (newDate: dayjs.Dayjs | null) => setDate(newDate);
+
 	return (
 		<>
 			<CalendarPicker
 				date={date}
-				onChange={newDate => setDate(newDate)}
+				onChange={handleSetDate()}
 				// minDate={minDate}
 				maxDate={maxDate}
 			/>

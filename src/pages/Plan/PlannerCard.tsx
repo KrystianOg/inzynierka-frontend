@@ -9,9 +9,8 @@ interface PlannerCardProps {
 
 const PlannerCard = ({ meal }: PlannerCardProps) => {
 	const { t } = useTranslation();
-	const navigateToRecipe = () => {
-		window.open(meal.sourceUrl, "_blank");
-	};
+	const navigateToRecipe = () => window.open(meal.sourceUrl, "_blank");
+
 	return (
 		<Card>
 			<CardHeader
@@ -36,7 +35,15 @@ const PlannerCard = ({ meal }: PlannerCardProps) => {
 				<Typography>
 					{t("planner.card.servings")} <span>{meal.servings}</span>
 				</Typography>
-				<Button variant="outlined" color="secondary" onClick={navigateToRecipe} fullWidth>
+				<Button
+					variant="contained"
+					color="secondary"
+					onClick={navigateToRecipe}
+					fullWidth
+					sx={{
+						color: "white",
+					}}
+				>
 					{t("planner.card.navigate_to_recipe")}
 				</Button>
 			</CardContent>

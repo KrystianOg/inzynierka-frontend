@@ -169,16 +169,15 @@ const AddTemplate = () => {
 									height: "56px",
 								}}
 							/>
-							<Skeleton animation="wave" sx={{ height: "56px" }} />
-							<Skeleton animation="wave" sx={{ height: "56px" }} />
-							<Skeleton animation="wave" sx={{ height: "56px" }} />
+							<Skeleton animation="wave" height={56} />
+							<Skeleton animation="wave" height={56} />
+							<Skeleton animation="wave" height={56} />
 							<div />
-							<Skeleton animation="wave" sx={{ height: "56px" }} />
-							<Skeleton animation="wave" sx={{ height: "56px" }} />
-							<Skeleton animation="wave" sx={{ height: "56px" }} />
-							<Skeleton animation="wave" sx={{ height: "56px" }} />
-							<Skeleton animation="wave" sx={{ height: "56px" }} />
-							<Skeleton animation="wave" sx={{ height: "56px" }} />
+							<Skeleton animation="wave" height={56} />
+							<Skeleton animation="wave" height={56} />
+							<Skeleton animation="wave" height={56} />
+							<Skeleton animation="wave" height={56} />
+							<Skeleton animation="wave" height={56} />
 						</>
 					)}
 					<Button
