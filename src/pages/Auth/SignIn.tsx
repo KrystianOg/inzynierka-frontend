@@ -30,8 +30,9 @@ const SignIn = () => {
 	const handleSignIn: SubmitHandler<SignInCredentials> = async credentials => {
 		const { error, isSuccess } = await signIn(credentials);
 
-		if (error) {
-			console.log(error);
+		if (isSuccess) {
+			navigate(from, { replace: true });
+		} else {
 			if (error === "Invalid login credentials") {
 				enqueueSnackbar(t("error.invalid_login_credentials"), {
 					variant: "error",
@@ -40,9 +41,12 @@ const SignIn = () => {
 				enqueueSnackbar(t("error.email_not_confirmed"), {
 					variant: "error",
 				});
+			} else {
+				enqueueSnackbar(t("error.unknown"), {
+					variant: "error",
+				});
 			}
 		}
-		if (isSuccess) navigate(from, { replace: true });
 	};
 
 	const handleGoogleSignIn = async () => {

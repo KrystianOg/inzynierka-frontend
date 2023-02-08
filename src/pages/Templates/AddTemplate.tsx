@@ -26,8 +26,6 @@ const AddTemplate = () => {
 	const onSubmit: SubmitHandler<AddTemplateT> = async newTemplate => {
 		if (!user) return;
 
-		console.log(newTemplate);
-
 		const res = await createTemplate({
 			...newTemplate,
 			user_id: user?.id,

@@ -13,8 +13,6 @@ const authApi = supabaseApi.injectEndpoints({
                     ? { error: error.message }
                     : { data: undefined }
             },
-            
-            
         }),
         signInWithOAuth: build.query<void, SignInWithOAuthCredentials>({
             queryFn: async (data) => {

@@ -21,7 +21,6 @@ const Planner = () => {
 	const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
 	const handleChange = (newValue: Weekday) => {
-		console.log(today);
 		setTab(newValue);
 	};
 
